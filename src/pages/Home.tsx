@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-sand px-4 py-16 sm:px-8 sm:py-24">
+      <section className="relative overflow-hidden bg-sand px-4 py-10 sm:px-8 sm:py-24">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -start-16 top-8 h-48 w-48 rounded-full bg-rose/10 blur-3xl"
@@ -47,21 +47,21 @@ export default function Home() {
             />
             {siteCopy.tagline}
           </p>
-          <h1 className="mt-4 font-display text-[2.15rem] font-semibold leading-relaxed text-ink sm:text-[2.85rem]">
+          <h1 className="mt-4 font-display text-[1.7rem] font-semibold leading-snug text-ink sm:text-[2.85rem] sm:leading-relaxed">
             {siteCopy.heroTitle}
           </h1>
           <FloralDivider />
           <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
             {siteCopy.heroSubtitle}
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <Button variant="primary" to="/programs">
+          <div className="mt-8 flex w-full flex-col items-stretch justify-center gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            <Button variant="primary" to="/programs" className="w-full sm:w-auto">
               البرامج
             </Button>
-            <Button variant="ghost" to="/classes">
+            <Button variant="ghost" to="/classes" className="w-full sm:w-auto">
               حصة رياضية
             </Button>
-            <Button variant="ghost" to="/nutrition">
+            <Button variant="ghost" to="/nutrition" className="w-full sm:w-auto">
               المطبخ
             </Button>
           </div>
@@ -71,7 +71,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <section className="mx-auto max-w-6xl px-4 py-9 sm:px-6 sm:py-14">
         <SectionTitle
           eyebrow="اختاري منطقتك"
           title="ستة مداخل للجسم… بنفس اللطف"
@@ -90,7 +90,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <section className="mx-auto max-w-6xl px-4 py-9 sm:px-6 sm:py-14">
         <SectionTitle
           eyebrow="البرامج"
           title="ثلاثة مسارات نبدأو بيهم"
@@ -118,7 +118,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <section className="mx-auto max-w-6xl px-4 py-9 sm:px-6 sm:py-14">
         <SectionTitle
           eyebrow="حصة رياضية"
           title="تابعي الصفّ كأنكِ في النادي"
@@ -136,7 +136,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+      <section className="mx-auto max-w-6xl px-4 py-9 sm:px-6 sm:py-14">
         <SectionTitle
           eyebrow="المطبخ الصحي"
           title="وصفات مغربية خفيفة"
@@ -177,7 +177,7 @@ export default function Home() {
           </div>
           <Link
             to="/cycle"
-            className="inline-flex items-center justify-center rounded-[1.5rem] bg-cream px-5 py-2.5 text-sm font-semibold text-rose-deep transition hover:bg-paper"
+            className="inline-flex w-full items-center justify-center rounded-[1.5rem] bg-cream px-5 py-2.5 text-sm font-semibold text-rose-deep transition hover:bg-paper sm:w-auto"
           >
             فتح التقويم
           </Link>

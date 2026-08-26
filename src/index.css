@@ -40,6 +40,8 @@ body,
 #root {
   min-height: 100%;
   width: 100%;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 html {
@@ -51,6 +53,12 @@ html {
 @layer base {
   html {
     font-size: 17px;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 1rem;
   }
 
   body {
@@ -120,6 +128,27 @@ html.dark .mix-blend-multiply {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-rose);
+}
+
+.chip-row {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.15rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.chip-row::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  .chip-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow: visible;
+  }
 }
 
 html.theme-3d {
@@ -348,13 +377,12 @@ html.theme-3d button.bg-rose:hover {
 }
 
 @media (max-width: 768px) {
-  .cube-c,
-  .cube-d {
-    display: none;
+  html {
+    font-size: 16px;
   }
 
   .cube-3d {
-    opacity: 0.28;
+    display: none;
   }
 
   html.theme-3d a.group,
@@ -362,6 +390,34 @@ html.theme-3d button.bg-rose:hover {
   html.theme-3d #ideal-weight,
   html.theme-3d nav[aria-label="باقي الأعضاء"] {
     transform: none;
+  }
+
+  html.theme-3d a.group {
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.95) inset,
+      0 6px 0 var(--color-rose-deep),
+      0 14px 24px rgb(58 42 50 / 0.14);
+  }
+
+  html.theme-3d #ideal-weight,
+  html.theme-3d nav[aria-label="باقي الأعضاء"] {
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.9) inset,
+      0 5px 0 color-mix(in srgb, var(--color-sage) 22%, var(--color-sand)),
+      0 16px 28px rgb(58 42 50 / 0.1);
+  }
+
+  html.theme-3d header {
+    box-shadow:
+      0 1px 0 rgb(255 255 255 / 0.85) inset,
+      0 8px 20px rgb(196 93 116 / 0.14);
+  }
+
+  html.theme-3d input,
+  html.theme-3d textarea {
+    box-shadow:
+      inset 0 2px 4px rgb(58 42 50 / 0.08),
+      0 3px 0 color-mix(in srgb, var(--color-rose) 18%, var(--color-sand));
   }
 }
 

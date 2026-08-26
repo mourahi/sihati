@@ -47,11 +47,11 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sand/90 bg-canvas/90 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
+    <header className="sticky top-0 z-50 border-b border-sand/90 bg-canvas/90 pt-[env(safe-area-inset-top)] backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-2 px-3 py-2.5 sm:gap-4 sm:px-4 md:px-6">
         <Link
           to="/"
-          className="inline-flex items-center gap-2 font-brand text-[1.95rem] font-bold leading-none text-rose-deep transition hover:text-rose focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
+          className="inline-flex items-center gap-1.5 font-brand text-[1.5rem] font-bold leading-none text-rose-deep transition hover:text-rose focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose sm:gap-2 sm:text-[1.95rem]"
           aria-label="صحتي — الصفحة الرئيسية"
         >
           <IconRose className="h-6 w-6 text-rose" />
@@ -105,7 +105,7 @@ export function Header() {
         </div>
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 pb-3 md:px-6">
+      <div className="mx-auto max-w-6xl px-3 pb-2.5 sm:px-4 md:px-6">
         <SearchBar />
       </div>
 

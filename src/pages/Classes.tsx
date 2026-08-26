@@ -21,14 +21,14 @@ export default function Classes() {
     : gymClasses
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+    <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16">
       <SectionTitle
         eyebrow="حصة رياضية"
         title="تابعي الصفّ كأنكِ في النادي"
         subtitle="فيديوهات حصص كاملة: حركات، موسيقى تحفيزية، ومدربة على الشاشة. شغّلي الفيديو وابدئي معها من الدار."
       />
 
-      <div className="mt-8 flex flex-wrap justify-center gap-2">
+      <div className="chip-row mt-8">
         <Button variant={activeStyle === null ? 'primary' : 'ghost'} to="/classes">
           الكل
         </Button>

@@ -21,13 +21,15 @@ export default function ClassDetail() {
   }
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+    <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-16">
       <div className="flex flex-wrap gap-2">
         <Badge tone="gold">{item.style}</Badge>
         <Badge tone="sage">{item.level}</Badge>
         <Badge tone="sand">{item.durationMin} دقيقة</Badge>
       </div>
-      <h1 className="mt-4 font-display text-4xl font-bold leading-snug text-ink">{item.title}</h1>
+      <h1 className="mt-4 font-display text-[1.7rem] font-bold leading-snug text-ink sm:text-4xl">
+        {item.title}
+      </h1>
       <p className="mt-4 text-lg leading-relaxed text-muted">{item.summary}</p>
 
       <section className="mt-8">

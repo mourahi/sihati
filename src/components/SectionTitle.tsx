@@ -15,7 +15,7 @@ export function SectionTitle({ eyebrow, title, subtitle }: SectionTitleProps) {
           {eyebrow}
         </p>
       ) : null}
-      <h2 className="font-display text-3xl font-semibold leading-relaxed text-ink md:text-[2.35rem]">
+      <h2 className="font-display text-[1.65rem] font-semibold leading-snug text-ink sm:text-3xl md:text-[2.35rem] md:leading-relaxed">
         {title}
       </h2>
       <FloralDivider />

@@ -21,14 +21,14 @@ export default function Nutrition() {
     : foodTips
 
   return (
-    <section className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+    <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16">
       <SectionTitle
         eyebrow="المطبخ الصحي"
         title="أكل مغربي يشبع ويحب جسمكِ"
         subtitle="وصفات وعادات يومية: حريرة خفيفة، طاجين خضر، شاي بنعنع كثير وسكر قليل."
       />
 
-      <div className="mt-8 flex flex-wrap justify-center gap-2">
+      <div className="chip-row mt-8">
         <Button
           variant={activeCategory === null ? 'primary' : 'ghost'}
           to="/nutrition"

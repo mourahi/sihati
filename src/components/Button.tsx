@@ -23,7 +23,7 @@ type ButtonAsLink = ButtonBase &
 export type ButtonProps = ButtonAsButton | ButtonAsLink;
 
 const BASE =
-  "btn-3d inline-flex items-center justify-center gap-2 rounded-[1.5rem] px-5 py-2.5 text-sm font-semibold transition duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose";
+  "btn-3d inline-flex shrink-0 items-center justify-center gap-2 rounded-[1.5rem] px-5 py-2.5 text-sm font-semibold transition duration-200 touch-manipulation focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose";
 
 const VARIANTS: Record<ButtonVariant, string> = {
   primary:

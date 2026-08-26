@@ -8,6 +8,7 @@ import {
   MONTHS,
   PHASE_META,
   WEEKDAYS,
+  WEEKDAYS_SHORT,
   type CyclePhase,
   type CycleSettings,
   addDays,
@@ -147,7 +148,7 @@ function Stepper({
       <div className="flex items-center gap-2">
         <button
           type="button"
-          className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sand text-ink hover:bg-rose hover:text-cream"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sand text-ink hover:bg-rose hover:text-cream"
           onClick={() => onChange(Math.max(min, value - 1))}
           aria-label={`إنقاص ${label}`}
         >
@@ -158,7 +159,7 @@ function Stepper({
         </span>
         <button
           type="button"
-          className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-sand text-ink hover:bg-rose hover:text-cream"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-sand text-ink hover:bg-rose hover:text-cream"
           onClick={() => onChange(Math.min(max, value + 1))}
           aria-label={`زيادة ${label}`}
         >
@@ -186,7 +187,7 @@ export default function Cycle() {
 
   if (!unlocked) {
     return (
-      <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+      <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-14">
         <SectionTitle
           eyebrow="خاص بالمرأة"
           title="مساحة لجسمكِ ودورتكِ"
@@ -223,7 +224,7 @@ export default function Cycle() {
   }
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+    <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-14">
       <SectionTitle
         eyebrow="خاص بالمرأة"
         title="مساحة لجسمكِ ودورتكِ"
@@ -310,15 +311,16 @@ export default function Cycle() {
           </button>
         </div>
 
-        <div className="mt-5 grid grid-cols-7 gap-1.5 text-center text-[0.7rem] font-medium text-muted sm:text-xs">
-          {WEEKDAYS.map((day) => (
+        <div className="mt-5 grid grid-cols-7 gap-1 text-center text-[0.65rem] font-medium text-muted sm:gap-1.5 sm:text-xs">
+          {WEEKDAYS.map((day, index) => (
             <span key={day} className="py-1">
-              {day}
+              <span className="sm:hidden">{WEEKDAYS_SHORT[index]}</span>
+              <span className="hidden sm:inline">{day}</span>
             </span>
           ))}
         </div>
 
-        <div className="mt-1 grid grid-cols-7 gap-1.5">
+        <div className="mt-1 grid grid-cols-7 gap-1 sm:gap-1.5">
           {cells.map((date, index) => {
             if (!date) {
               return <span key={`empty-${index}`} className="aspect-square" />
@@ -339,7 +341,7 @@ export default function Cycle() {
                 onClick={() => selectDay(date)}
                 aria-pressed={selected}
                 aria-label={`${date.getDate()} ${MONTHS[month]}${phase ? `، ${PHASE_META[phase].label}` : ''}`}
-                className={`relative aspect-square rounded-2xl text-sm font-semibold transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose ${
+                className={`relative aspect-square rounded-xl text-xs font-semibold transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose sm:rounded-2xl sm:text-sm ${
                   phase ? PHASE_META[phase].cell : 'bg-canvas text-ink hover:bg-sand'
                 } ${selected ? 'ring-2 ring-gold ring-offset-2 ring-offset-cream' : ''} ${
                   isToday && !phase ? 'ring-2 ring-rose/50' : ''

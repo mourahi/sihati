@@ -51,6 +51,7 @@ export const PHASE_META: Record<
 }
 
 export const WEEKDAYS = ['الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت', 'الأحد']
+export const WEEKDAYS_SHORT = ['إثن', 'ثلا', 'أرب', 'خمي', 'جمع', 'سبت', 'أحد']
 
 export const MONTHS = [
   'يناير',

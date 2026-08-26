@@ -40,11 +40,11 @@ export default function ProgramDetail() {
   const relatedWorkouts = workoutsForZone(program.zone)
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-      <div className="flex flex-col-reverse gap-8 lg:flex-row lg:items-start">
+    <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-16">
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-start">
         <article className="min-w-0 flex-1">
           <p className="text-sm font-medium text-gold">{getZoneLabel(program.zone)}</p>
-          <h1 className="mt-2 font-display text-4xl font-bold leading-snug text-ink">
+          <h1 className="mt-2 font-display text-[1.7rem] font-bold leading-snug text-ink sm:text-4xl">
             <span aria-hidden="true" className="me-2">
               {program.imageEmoji}
             </span>

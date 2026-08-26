@@ -23,9 +23,9 @@ export default function NutritionDetail() {
   }
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+    <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-16">
       <Badge tone="sage">{food.category}</Badge>
-      <h1 className="mt-4 font-display text-4xl font-bold leading-snug text-ink">
+      <h1 className="mt-4 font-display text-[1.7rem] font-bold leading-snug text-ink sm:text-4xl">
         {food.title}
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-muted">{food.summary}</p>

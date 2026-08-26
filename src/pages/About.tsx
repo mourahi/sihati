@@ -23,7 +23,7 @@ const values = [
 
 export default function About() {
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+    <article className="mx-auto max-w-3xl px-4 py-8 sm:px-6 sm:py-16">
       <SectionTitle
         eyebrow={siteCopy.brand}
         title="مساحة هادئة لجسمكِ"
