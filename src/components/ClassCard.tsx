@@ -1,43 +1,19 @@
-import { Link } from "react-router-dom";
-import { Badge } from "./Badge";
-import { IconBlossom } from "./Florals";
+import { Link } from 'react-router-dom'
+import { Badge } from './Badge'
+import { IconBlossom } from './Florals'
+import type { GymClass } from '../data/content'
 
-type WorkoutCardProps = {
-  title: string;
-  durationMin: number;
-  level: string;
-  youtubeId: string;
-  channel: string;
-  zoneLabel: string;
-};
-
-const LEVEL_LABEL: Record<string, string> = {
-  beginner: "مبتدئة",
-  easy: "مبتدئة",
-  intermediate: "متوسطة",
-  medium: "متوسطة",
-  advanced: "متقدمة",
-  hard: "متقدمة",
-};
-
-function levelLabel(value: string) {
-  return LEVEL_LABEL[value] ?? value;
+type ClassCardProps = {
+  item: GymClass
 }
 
-export function WorkoutCard({
-  title,
-  durationMin,
-  level,
-  youtubeId,
-  channel,
-  zoneLabel,
-}: WorkoutCardProps) {
-  const href = `/workouts/${youtubeId}`;
-  const thumbnail = `https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg`;
+export function ClassCard({ item }: ClassCardProps) {
+  const thumbnail = `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`
 
   return (
     <Link
-      to={href}
+      id={item.id}
+      to={`/classes/${item.id}`}
       className="group flex flex-col overflow-hidden rounded-[1.5rem] border border-sand bg-paper/70 shadow-[0_8px_30px_rgba(44,36,32,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_12px_40px_rgba(44,36,32,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
     >
       <div className="relative aspect-video overflow-hidden bg-sand">
@@ -59,7 +35,7 @@ export function WorkoutCard({
           </svg>
         </span>
         <Badge tone="sand" className="absolute bottom-3 start-3 bg-cream/90">
-          {durationMin} دقيقة
+          {item.durationMin} دقيقة
         </Badge>
         <span
           aria-hidden="true"
@@ -70,17 +46,18 @@ export function WorkoutCard({
       </div>
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-2">
-          <Badge tone="sage">{levelLabel(level)}</Badge>
-          <span className="text-xs font-medium text-sage">{zoneLabel}</span>
+          <Badge tone="sage">{item.level}</Badge>
+          <Badge tone="gold">{item.style}</Badge>
         </div>
         <h3 className="mt-3 font-display text-lg font-bold leading-snug text-ink group-hover:text-rose-deep">
-          {title}
+          {item.title}
         </h3>
-        <p className="mt-2 text-xs text-muted">{channel}</p>
+        <p className="mt-2 text-sm leading-relaxed text-muted">{item.summary}</p>
+        <p className="mt-2 text-xs text-muted">{item.channel}</p>
         <span className="mt-4 inline-flex w-fit items-center rounded-[1.5rem] bg-rose px-4 py-2 text-sm font-semibold text-cream">
-          شاهد
+          ابدئي الحصة
         </span>
       </div>
     </Link>
-  );
+  )
 }

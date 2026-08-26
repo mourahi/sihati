@@ -70,7 +70,7 @@ export default function NutritionDetail() {
       </section>
 
       {food.swapFrom ? (
-        <p className="mt-6 rounded-[1.5rem] border border-gold/40 bg-white/70 px-5 py-4 text-sm leading-relaxed text-ink">
+        <p className="mt-6 rounded-[1.5rem] border border-gold/40 bg-paper/70 px-5 py-4 text-sm leading-relaxed text-ink">
           {food.swapFrom}
         </p>
       ) : null}

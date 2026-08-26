@@ -100,7 +100,7 @@ export default function ProgramDetail() {
           <section className="mt-12">
             <h2 className="font-display text-2xl font-bold text-ink">خطة الأيام السبعة</h2>
 
-            <div className="mt-6 hidden overflow-hidden rounded-[1.5rem] border border-sand bg-white/70 md:block">
+            <div className="mt-6 hidden overflow-hidden rounded-[1.5rem] border border-sand bg-paper/70 md:block">
               <table className="w-full text-start text-sm">
                 <thead className="bg-sand/80 text-ink">
                   <tr>
@@ -125,7 +125,7 @@ export default function ProgramDetail() {
               {program.weeklyPlan.map((row) => (
                 <article
                   key={row.day}
-                  className="rounded-[1.5rem] border border-sand bg-white/70 p-4"
+                  className="rounded-[1.5rem] border border-sand bg-paper/70 p-4"
                 >
                   <h3 className="font-semibold text-ink">{row.day}</h3>
                   <p className="mt-2 text-sm leading-relaxed text-muted">{row.meals}</p>

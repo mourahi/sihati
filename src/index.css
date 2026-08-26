@@ -1,10 +1,14 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-rose: #e07a90;
   --color-rose-deep: #c45d74;
   --color-sage: #6e9a86;
   --color-cream: #fff6f5;
+  --color-canvas: #fff6f5;
+  --color-paper: #ffffff;
   --color-sand: #f7e4e6;
   --color-gold: #d4a07a;
   --color-ink: #3a2a32;
@@ -18,6 +22,19 @@
   --font-brand: "Aref Ruqaa", "El Messiri", serif;
 }
 
+html.dark {
+  color-scheme: dark;
+  --color-canvas: #1a1216;
+  --color-paper: #261c21;
+  --color-sand: #3a2c32;
+  --color-ink: #f6ecee;
+  --color-muted: #cbb3b9;
+  --color-rose-deep: #e89aaa;
+  --color-sage: #8fbfa8;
+  --color-gold: #dcb08a;
+  --color-cycle-bloom: #c48968;
+}
+
 html,
 body,
 #root {
@@ -26,8 +43,9 @@ body,
 }
 
 html {
+  color-scheme: light;
   scrollbar-width: thin;
-  scrollbar-color: #e07a90 #fff6f5;
+  scrollbar-color: #e07a90 var(--color-canvas);
 }
 
 @layer base {
@@ -40,7 +58,7 @@ html {
     font-family: var(--font-sans);
     font-weight: 400;
     line-height: 1.85;
-    background-color: var(--color-cream);
+    background-color: var(--color-canvas);
     color: var(--color-ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -72,8 +90,13 @@ html {
   font-family: var(--font-display);
 }
 
-.font-brand {
-  font-family: var(--font-brand);
+html.dark body {
+  background-image:
+    radial-gradient(circle at 12% 8%, rgb(224 122 144 / 0.08), transparent 28%),
+    radial-gradient(circle at 88% 0%, rgb(212 160 122 / 0.08), transparent 26%),
+    radial-gradient(circle at 6% 86%, rgb(110 154 134 / 0.06), transparent 22%),
+    radial-gradient(circle at 50% 50%, rgb(224 122 144 / 0.04) 1.1px, transparent 1.4px),
+    radial-gradient(circle at 50% 40%, rgb(212 160 122 / 0.04) 0.7px, transparent 1px);
 }
 
 ::-webkit-scrollbar {
@@ -81,8 +104,13 @@ html {
   height: 8px;
 }
 
+html.dark .mix-blend-multiply {
+  mix-blend-mode: soft-light;
+  opacity: 0.32;
+}
+
 ::-webkit-scrollbar-track {
-  background: var(--color-cream);
+  background: var(--color-canvas);
 }
 
 ::-webkit-scrollbar-thumb {

@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { FloralIllustration, IconMoon, IconRose } from '../components/Florals'
+import { IdealWeightCard } from '../components/IdealWeightCard'
 import { SectionTitle } from '../components/SectionTitle'
 import {
   CYCLE_PIN,
@@ -47,7 +48,7 @@ function PinGate({ onUnlock }: { onUnlock: () => void }) {
   }
 
   return (
-    <section className="relative mx-auto flex min-h-[70dvh] max-w-md flex-col items-center justify-center px-4 py-12 text-center">
+    <section className="relative mx-auto mt-4 flex max-w-md flex-col items-center px-4 py-8 text-center">
       <FloralIllustration
         name="corner"
         alt=""
@@ -61,7 +62,7 @@ function PinGate({ onUnlock }: { onUnlock: () => void }) {
       <span className="inline-flex h-16 w-16 items-center justify-center rounded-full bg-rose/15 text-rose">
         <IconMoon className="h-8 w-8" />
       </span>
-      <h1 className="mt-5 font-display text-3xl font-semibold text-ink">مساحة خاصة</h1>
+      <h2 className="mt-5 font-display text-3xl font-semibold text-ink">تقويم الدورة</h2>
       <p className="mt-2 text-sm leading-relaxed text-muted">
         أدخلي الرقم السري لفتح تقويم الدورة. معلوماتكِ تبقى على هذا الجهاز فقط.
       </p>
@@ -117,7 +118,7 @@ function PinKey({
       className={`h-14 rounded-2xl text-xl font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose ${
         muted
           ? 'bg-sand/80 text-muted hover:bg-sand'
-          : 'bg-white/80 text-ink shadow-[0_8px_24px_rgba(44,36,32,0.06)] hover:bg-rose hover:text-cream'
+          : 'bg-paper/80 text-ink shadow-[0_8px_24px_rgba(44,36,32,0.06)] hover:bg-rose hover:text-cream'
       }`}
     >
       {label}
@@ -141,7 +142,7 @@ function Stepper({
   onChange: (value: number) => void
 }) {
   return (
-    <div className="flex items-center justify-between rounded-[1.25rem] bg-white/70 px-4 py-3">
+    <div className="flex items-center justify-between rounded-[1.25rem] bg-paper/70 px-4 py-3">
       <p className="text-sm font-medium text-ink">{label}</p>
       <div className="flex items-center gap-2">
         <button
@@ -184,7 +185,21 @@ export default function Cycle() {
   }
 
   if (!unlocked) {
-    return <PinGate onUnlock={() => setUnlocked(true)} />
+    return (
+      <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
+        <SectionTitle
+          eyebrow="خاص بالمرأة"
+          title="مساحة لجسمكِ ودورتكِ"
+          subtitle="حساب وزن لطيف حسب طولكِ، وتقويم للدورة يبقى خلف رقم سري."
+        />
+        <div className="mt-8">
+          <IdealWeightCard />
+        </div>
+        <div className="mt-10">
+          <PinGate onUnlock={() => setUnlocked(true)} />
+        </div>
+      </article>
+    )
   }
 
   const year = cursor.getFullYear()
@@ -210,10 +225,19 @@ export default function Cycle() {
   return (
     <article className="mx-auto max-w-3xl px-4 py-10 sm:px-6 sm:py-14">
       <SectionTitle
-        eyebrow="تتبع لطيف"
-        title="تقويم الدورة الشهرية"
-        subtitle="اضغطي مباشرة على يوم بداية دورتكِ. الألوان تُظهر كل مرحلة في الشهر."
+        eyebrow="خاص بالمرأة"
+        title="مساحة لجسمكِ ودورتكِ"
+        subtitle="حساب وزن لطيف حسب طولكِ، وتقويم ملون لدروتكِ خلف رقم سري."
       />
+
+      <div className="mt-8">
+        <IdealWeightCard />
+      </div>
+
+      <h2 className="mt-12 font-display text-2xl font-bold text-ink">تقويم الدورة الشهرية</h2>
+      <p className="mt-2 text-sm leading-relaxed text-muted">
+        اضغطي مباشرة على يوم بداية دورتكِ. الألوان تُظهر كل مرحلة في الشهر.
+      </p>
 
       {todayPhase ? (
         <section
@@ -263,7 +287,7 @@ export default function Cycle() {
         />
       </div>
 
-      <section className="mt-4 rounded-[1.75rem] border border-sand bg-white/75 p-4 shadow-[0_10px_32px_rgba(44,36,32,0.06)] sm:p-6">
+      <section className="mt-4 rounded-[1.75rem] border border-sand bg-paper/75 p-4 shadow-[0_10px_32px_rgba(44,36,32,0.06)] sm:p-6">
         <div className="flex items-center justify-between gap-3">
           <button
             type="button"
@@ -316,7 +340,7 @@ export default function Cycle() {
                 aria-pressed={selected}
                 aria-label={`${date.getDate()} ${MONTHS[month]}${phase ? `، ${PHASE_META[phase].label}` : ''}`}
                 className={`relative aspect-square rounded-2xl text-sm font-semibold transition hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose ${
-                  phase ? PHASE_META[phase].cell : 'bg-cream text-ink hover:bg-sand'
+                  phase ? PHASE_META[phase].cell : 'bg-canvas text-ink hover:bg-sand'
                 } ${selected ? 'ring-2 ring-gold ring-offset-2 ring-offset-cream' : ''} ${
                   isToday && !phase ? 'ring-2 ring-rose/50' : ''
                 }`}
@@ -338,7 +362,7 @@ export default function Cycle() {
         {(Object.keys(PHASE_META) as CyclePhase[]).map((phase) => (
           <li
             key={phase}
-            className="flex items-center gap-2 rounded-[1.25rem] bg-white/70 px-3 py-2.5 text-sm"
+            className="flex items-center gap-2 rounded-[1.25rem] bg-paper/70 px-3 py-2.5 text-sm"
           >
             <span className={`h-3.5 w-3.5 rounded-full ${PHASE_META[phase].swatch}`} />
             <span className="font-medium text-ink">{PHASE_META[phase].label}</span>

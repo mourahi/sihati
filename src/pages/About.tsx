@@ -65,7 +65,7 @@ export default function About() {
           {values.map((value) => (
             <article
               key={value.title}
-              className="rounded-[1.5rem] border border-sand bg-white/70 p-5"
+              className="rounded-[1.5rem] border border-sand bg-paper/70 p-5"
             >
               <h3 className="flex items-center gap-2 font-display text-xl font-bold text-rose-deep">
                 <value.Icon className="h-5 w-5 shrink-0 text-rose" />

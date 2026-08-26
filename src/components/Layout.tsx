@@ -9,7 +9,7 @@ type LayoutProps = {
 
 export function Layout({ children }: LayoutProps) {
   return (
-    <div className="flex min-h-dvh flex-col bg-cream text-ink">
+    <div className="flex min-h-dvh flex-col bg-canvas text-ink">
       <Header />
       <main className="flex-1">{children ?? <Outlet />}</main>
       <Footer />

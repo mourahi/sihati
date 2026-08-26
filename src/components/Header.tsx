@@ -1,13 +1,15 @@
 import { useEffect, useId, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { IconBlossom, IconMoon, IconRose } from "./Florals";
+import { IconBlossom, IconLeaf, IconMoon, IconRose } from "./Florals";
 import { SearchBar } from "./SearchBar";
+import { ThemeToggle } from "./ThemeToggle";
 
 const NAV_ITEMS = [
   { to: "/", label: "الرئيسية", end: true, Icon: IconRose },
   { to: "/programs", label: "البرامج", end: false, Icon: IconBlossom },
+  { to: "/classes", label: "حصة رياضية", end: false, Icon: IconLeaf },
   { to: "/nutrition", label: "المطبخ", end: false, Icon: IconRose },
-  { to: "/cycle", label: "الدورة", end: false, Icon: IconMoon },
+  { to: "/cycle", label: "خاص بالمرأة", end: false, Icon: IconMoon },
   { to: "/about", label: "عن صحتي", end: false, Icon: IconBlossom },
 ] as const;
 
@@ -45,7 +47,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-sand/90 bg-cream/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-sand/90 bg-canvas/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <Link
           to="/"
@@ -56,7 +58,7 @@ export function Header() {
           صحتي
         </Link>
 
-        <nav aria-label="التنقل الرئيسي" className="hidden items-center gap-4 lg:gap-6 md:flex">
+        <nav aria-label="التنقل الرئيسي" className="hidden items-center gap-3 lg:gap-5 lg:flex">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.to}
@@ -72,32 +74,35 @@ export function Header() {
           ))}
         </nav>
 
-        <button
-          type="button"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-sand bg-cream text-ink transition hover:bg-sand md:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose"
-          aria-expanded={open}
-          aria-controls={menuId}
-          aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
-          onClick={() => setOpen((value) => !value)}
-        >
-          <span className="relative block h-4 w-6" aria-hidden="true">
-            <span
-              className={`absolute start-0 h-0.5 w-6 rounded-full bg-ink transition duration-300 ${
-                open ? "top-1.5 rotate-45" : "top-0"
-              }`}
-            />
-            <span
-              className={`absolute start-0 top-1.5 h-0.5 w-6 rounded-full bg-ink transition duration-200 ${
-                open ? "opacity-0" : "opacity-100"
-              }`}
-            />
-            <span
-              className={`absolute start-0 h-0.5 w-6 rounded-full bg-ink transition duration-300 ${
-                open ? "top-1.5 -rotate-45" : "top-3"
-              }`}
-            />
-          </span>
-        </button>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-2xl border border-sand bg-canvas text-ink transition hover:bg-sand lg:hidden focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose"
+            aria-expanded={open}
+            aria-controls={menuId}
+            aria-label={open ? "إغلاق القائمة" : "فتح القائمة"}
+            onClick={() => setOpen((value) => !value)}
+          >
+            <span className="relative block h-4 w-6" aria-hidden="true">
+              <span
+                className={`absolute start-0 h-0.5 w-6 rounded-full bg-ink transition duration-300 ${
+                  open ? "top-1.5 rotate-45" : "top-0"
+                }`}
+              />
+              <span
+                className={`absolute start-0 top-1.5 h-0.5 w-6 rounded-full bg-ink transition duration-200 ${
+                  open ? "opacity-0" : "opacity-100"
+                }`}
+              />
+              <span
+                className={`absolute start-0 h-0.5 w-6 rounded-full bg-ink transition duration-300 ${
+                  open ? "top-1.5 -rotate-45" : "top-3"
+                }`}
+              />
+            </span>
+          </button>
+        </div>
       </div>
 
       <div className="mx-auto max-w-6xl px-4 pb-3 md:px-6">
@@ -106,7 +111,7 @@ export function Header() {
 
       <div
         id={menuId}
-        className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-out md:hidden ${
+        className={`grid overflow-hidden transition-[grid-template-rows,opacity] duration-300 ease-out lg:hidden ${
           open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
         }`}
       >

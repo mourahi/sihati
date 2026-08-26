@@ -1,4 +1,4 @@
-import { foodTips, programs, workouts, zones } from '../data/content'
+import { foodTips, gymClasses, programs, workouts, zones } from '../data/content'
 import { getZoneLabel, programPathForZone } from './zones'
 
 export type SearchHit = {
@@ -6,7 +6,7 @@ export type SearchHit = {
   title: string
   hint: string
   href: string
-  kind: 'برنامج' | 'رياضة' | 'وصفة' | 'منطقة' | 'صفحة'
+  kind: 'برنامج' | 'رياضة' | 'حصة' | 'وصفة' | 'منطقة' | 'صفحة'
 }
 
 function normalize(value: string) {
@@ -23,8 +23,10 @@ function normalize(value: string) {
 const PAGES: SearchHit[] = [
   { id: 'page-home', title: 'الرئيسية', hint: 'صفحة البداية', href: '/', kind: 'صفحة' },
   { id: 'page-programs', title: 'البرامج', hint: 'مسارات حسب منطقة الجسم', href: '/programs', kind: 'صفحة' },
+  { id: 'page-classes', title: 'حصة رياضية', hint: 'حصص يوتوب كاملة كأنكِ في النادي', href: '/classes', kind: 'صفحة' },
   { id: 'page-nutrition', title: 'المطبخ الصحي', hint: 'وصفات مغربية خفيفة', href: '/nutrition', kind: 'صفحة' },
-  { id: 'page-cycle', title: 'تتبع الدورة الشهرية', hint: 'تقويم ملون برقم سري', href: '/cycle', kind: 'صفحة' },
+  { id: 'page-cycle', title: 'خاص بالمرأة', hint: 'تقويم الدورة والوزن المثالي', href: '/cycle', kind: 'صفحة' },
+  { id: 'page-weight', title: 'الوزن المثالي', hint: 'حساب تقدير لطيف حسب الطول', href: '/cycle#ideal-weight', kind: 'صفحة' },
   { id: 'page-about', title: 'عن صحتي', hint: 'قيم الموقع والتنبيه الطبي', href: '/about', kind: 'صفحة' },
 ]
 
@@ -53,6 +55,14 @@ function catalog(): SearchHit[] {
     kind: 'رياضة',
   }))
 
+  const classHits: SearchHit[] = gymClasses.map((item) => ({
+    id: `class-${item.id}`,
+    title: item.title,
+    hint: `${item.durationMin} دقيقة · ${item.style} · ${item.channel}`,
+    href: `/classes/${item.id}`,
+    kind: 'حصة',
+  }))
+
   const foodHits: SearchHit[] = foodTips.map((food) => ({
     id: `food-${food.id}`,
     title: food.title,
@@ -61,7 +71,7 @@ function catalog(): SearchHit[] {
     kind: 'وصفة',
   }))
 
-  return [...PAGES, ...zoneHits, ...programHits, ...workoutHits, ...foodHits]
+  return [...PAGES, ...zoneHits, ...programHits, ...workoutHits, ...classHits, ...foodHits]
 }
 
 export function searchSite(query: string, limit = 8): SearchHit[] {

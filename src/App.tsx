@@ -1,6 +1,8 @@
 import { BrowserRouter, Navigate, Routes, Route } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import About from './pages/About'
+import ClassDetail from './pages/ClassDetail'
+import Classes from './pages/Classes'
 import Cycle from './pages/Cycle'
 import Home from './pages/Home'
 import Nutrition from './pages/Nutrition'
@@ -21,6 +23,8 @@ export default function App() {
           <Route path="/programs/:id" element={<ProgramDetail />} />
           <Route path="/workouts" element={<Navigate to="/programs" replace />} />
           <Route path="/workouts/:videoId" element={<WorkoutRedirect />} />
+          <Route path="/classes" element={<Classes />} />
+          <Route path="/classes/:id" element={<ClassDetail />} />
           <Route path="/nutrition" element={<Nutrition />} />
           <Route path="/nutrition/:id" element={<NutritionDetail />} />
           <Route path="/cycle" element={<Cycle />} />

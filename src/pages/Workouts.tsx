@@ -45,7 +45,7 @@ export default function Workouts() {
           <p className="mt-2 text-muted">{selected.channel}</p>
         </div>
       ) : videoId ? (
-        <div className="mb-12 rounded-[1.5rem] border border-sand bg-white/70 px-6 py-8 text-center">
+        <div className="mb-12 rounded-[1.5rem] border border-sand bg-paper/70 px-6 py-8 text-center">
           <h1 className="font-display text-2xl font-bold text-ink">
             عذراً، لم نجد هذا الفيديو
           </h1>

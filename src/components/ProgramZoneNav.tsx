@@ -13,7 +13,7 @@ export function ProgramZoneNav({ currentZone }: ProgramZoneNavProps) {
   return (
     <nav
       aria-label="باقي الأعضاء"
-      className="rounded-[1.5rem] border border-sand bg-white/70 p-4 shadow-[0_8px_30px_rgba(44,36,32,0.06)]"
+      className="rounded-[1.5rem] border border-sand bg-paper/70 p-4 shadow-[0_8px_30px_rgba(44,36,32,0.06)]"
     >
       <h2 className="border-b border-sand pb-3 font-display text-lg font-bold text-ink">
         باقي الأعضاء

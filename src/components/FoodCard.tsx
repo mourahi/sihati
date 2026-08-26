@@ -33,7 +33,7 @@ export function FoodCard({
     <Link
       id={id}
       to={href}
-      className="group flex flex-col overflow-hidden rounded-[1.5rem] border border-sand bg-white/70 shadow-[0_8px_30px_rgba(44,36,32,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_12px_40px_rgba(44,36,32,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
+      className="group flex flex-col overflow-hidden rounded-[1.5rem] border border-sand bg-paper/70 shadow-[0_8px_30px_rgba(44,36,32,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_12px_40px_rgba(44,36,32,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
     >
       <div className="relative aspect-[4/3] overflow-hidden bg-sand">
         <img

@@ -29,7 +29,7 @@ export function ZoneCard({ id, label, description, href }: ZoneCardProps) {
     <Link
       id={id}
       to={href}
-      className="group relative flex flex-col rounded-[1.5rem] border border-sand bg-white/70 p-6 shadow-[0_8px_30px_rgba(44,36,32,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_12px_40px_rgba(44,36,32,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
+      className="group relative flex flex-col rounded-[1.5rem] border border-sand bg-paper/70 p-6 shadow-[0_8px_30px_rgba(44,36,32,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_12px_40px_rgba(44,36,32,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
     >
       <IconBlossom className="pointer-events-none absolute top-3 end-3 h-3.5 w-3.5 text-rose/30" />
       <span

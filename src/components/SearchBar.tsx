@@ -70,7 +70,7 @@ export function SearchBar() {
         id={inputId}
         type="search"
         value={query}
-        placeholder="ابحثي عن وصفة، برنامج، تمرين أو الدورة…"
+        placeholder="ابحثي عن وصفة، برنامج، حصة أو خاص بالمرأة…"
         autoComplete="off"
         role="combobox"
         aria-expanded={open && results.length > 0}
@@ -83,14 +83,14 @@ export function SearchBar() {
         }}
         onFocus={() => setOpen(true)}
         onKeyDown={onKeyDown}
-        className="h-11 w-full rounded-[1.25rem] border border-sand bg-white/80 pe-4 ps-10 text-sm text-ink outline-none placeholder:text-muted/80 transition focus:border-rose/50 focus:bg-white focus:shadow-[0_8px_24px_rgba(224,122,144,0.12)]"
+        className="h-11 w-full rounded-[1.25rem] border border-sand bg-paper/80 pe-4 ps-10 text-sm text-ink outline-none placeholder:text-muted/80 transition focus:border-rose/50 focus:bg-paper focus:shadow-[0_8px_24px_rgba(224,122,144,0.12)]"
       />
 
       {open && query.trim() ? (
         <div
           id={listId}
           role="listbox"
-          className="absolute inset-x-0 top-[calc(100%+0.4rem)] z-50 overflow-hidden rounded-[1.25rem] border border-sand bg-cream/95 shadow-[0_16px_40px_rgba(44,36,32,0.12)] backdrop-blur-md"
+          className="absolute inset-x-0 top-[calc(100%+0.4rem)] z-50 overflow-hidden rounded-[1.25rem] border border-sand bg-canvas/95 shadow-[0_16px_40px_rgba(44,36,32,0.12)] backdrop-blur-md"
         >
           {results.length === 0 ? (
             <p className="px-4 py-3 text-sm text-muted">لا توجد نتائج لهذا البحث.</p>

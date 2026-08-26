@@ -24,6 +24,19 @@ export type Workout = {
   channel: string
 }
 
+export type ClassStyle = 'رقص' | 'مشي' | 'كارديو' | 'قوة'
+
+export type GymClass = {
+  id: string
+  title: string
+  summary: string
+  durationMin: number
+  level: 'مبتدئة' | 'متوسطة'
+  style: ClassStyle
+  youtubeId: string
+  channel: string
+}
+
 export type FoodTip = {
   id: string
   title: string
@@ -545,6 +558,99 @@ export const workouts: Workout[] = [
     level: 'متوسطة',
     youtubeId: 'Yn0dV4s81H0',
     channel: 'growwithjo',
+  },
+]
+
+export const gymClasses: GymClass[] = [
+  {
+    id: 'dance-party-15',
+    title: 'حصة رقص حماسية',
+    summary: 'موسيقى عالية وحركات بسيطة تتبعينها كأنكِ في النادي. ربع ساعة تفرّغ الطاقة بضحكة.',
+    durationMin: 15,
+    level: 'مبتدئة',
+    style: 'رقص',
+    youtubeId: '1vRto-2MMZo',
+    channel: 'MadFit',
+  },
+  {
+    id: 'dance-80s',
+    title: 'حصة رقص الثمانينات',
+    summary: 'أغاني قديمة وحركة كاملة للجسم، بلا معدات. تتبعين المدربة خطوة بخطوة.',
+    durationMin: 20,
+    level: 'مبتدئة',
+    style: 'رقص',
+    youtubeId: 'OVys9s4Q4TY',
+    channel: 'MadFit',
+  },
+  {
+    id: 'dance-2000s',
+    title: 'رقص الألفينيات',
+    summary: 'حصة قصيرة على إيقاع أغاني الألفينيات. لا تحتاجين حفظ الرقصة؛ تابعي الشاشة.',
+    durationMin: 15,
+    level: 'مبتدئة',
+    style: 'رقص',
+    youtubeId: 'xnDhDaVxNng',
+    channel: 'growwithjo',
+  },
+  {
+    id: 'walk-2mile',
+    title: 'مشي سريع في البيت',
+    summary: 'حصة مشي كأنكِ في قاعة: موسيقى، خطوات في المكان، وتعرق لطيف بلا قفز.',
+    durationMin: 30,
+    level: 'مبتدئة',
+    style: 'مشي',
+    youtubeId: 'N-2MMkhBfm4',
+    channel: 'growwithjo',
+  },
+  {
+    id: 'fat-burn-30',
+    title: 'حصة حرق ثلاثين دقيقة',
+    summary: 'كارديو واقفة مع إيقاع ثابت. مناسبة إن رجعتِ للحركة بعد انقطاع.',
+    durationMin: 30,
+    level: 'مبتدئة',
+    style: 'كارديو',
+    youtubeId: 'wtjQ0V9A3KY',
+    channel: 'growwithjo',
+  },
+  {
+    id: 'cardio-30',
+    title: 'كارديو كامل من الدار',
+    summary: 'حصة نصف ساعة تتبعينها مع المجموعة على الشاشة، بموسيقى تحفّز الخطوة.',
+    durationMin: 30,
+    level: 'متوسطة',
+    style: 'كارديو',
+    youtubeId: 'Yn0dV4s81H0',
+    channel: 'growwithjo',
+  },
+  {
+    id: 'hiit-no-jump',
+    title: 'حصة جسم كامل بلا قفز',
+    summary: 'تمارين متتالية مع الموسيقى، مناسبة للشقة والجيران. تتبعين العدّ من الشاشة.',
+    durationMin: 30,
+    level: 'متوسطة',
+    style: 'كارديو',
+    youtubeId: 'rI_6l992GrA',
+    channel: 'MadFit',
+  },
+  {
+    id: 'standing-hiit',
+    title: 'حصة واقفة مع الإيقاع',
+    summary: 'كل الحركات وأنتِ واقفة. كأنكِ في صفّ النادي: إحماء، سلسلة، ثم نهاية.',
+    durationMin: 20,
+    level: 'متوسطة',
+    style: 'كارديو',
+    youtubeId: 'HhdYlniTjvg',
+    channel: 'MadFit',
+  },
+  {
+    id: 'tone-strength',
+    title: 'حصة شدّ وقوة',
+    summary: 'تمارين تقوية للجسم كامل مع موسيقى في الخلفية. زجاجات الماء تكفي إن بغيتِ ثقلاً خفيفاً.',
+    durationMin: 30,
+    level: 'متوسطة',
+    style: 'قوة',
+    youtubeId: 'iX2FUPgd60A',
+    channel: 'MadFit',
   },
 ]
 

@@ -2,15 +2,17 @@ import { Link } from 'react-router-dom'
 import { Badge } from '../components/Badge'
 import { Button } from '../components/Button'
 import { FloralDivider, FloralIllustration, IconMoon } from '../components/Florals'
+import { ClassCard } from '../components/ClassCard'
 import { FoodCard } from '../components/FoodCard'
 import { ProgramCard } from '../components/ProgramCard'
 import { SectionTitle } from '../components/SectionTitle'
 import { ZoneCard } from '../components/ZoneCard'
-import { foodTips, programs, siteCopy, zones } from '../data/content'
+import { foodTips, gymClasses, programs, siteCopy, zones } from '../data/content'
 import { getZoneLabel } from '../lib/zones'
 
 export default function Home() {
   const featuredPrograms = programs.slice(0, 3)
+  const featuredClasses = gymClasses.slice(0, 3)
   const featuredFoods = foodTips.slice(0, 3)
 
   return (
@@ -55,6 +57,9 @@ export default function Home() {
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             <Button variant="primary" to="/programs">
               البرامج
+            </Button>
+            <Button variant="ghost" to="/classes">
+              حصة رياضية
             </Button>
             <Button variant="ghost" to="/nutrition">
               المطبخ
@@ -114,6 +119,24 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
         <SectionTitle
+          eyebrow="حصة رياضية"
+          title="تابعي الصفّ كأنكِ في النادي"
+          subtitle="فيديوهات حصص كاملة: حركات، موسيقى تحفيزية، ومدربة على الشاشة."
+        />
+        <div className="mt-10 grid gap-4 md:grid-cols-3">
+          {featuredClasses.map((item) => (
+            <ClassCard key={item.id} item={item} />
+          ))}
+        </div>
+        <div className="mt-8 text-center">
+          <Button variant="ghost" to="/classes">
+            كل الحصص
+          </Button>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+        <SectionTitle
           eyebrow="المطبخ الصحي"
           title="وصفات مغربية خفيفة"
           subtitle="حريرة، طاجين، كسكس… بنسخة تشبع وما تثقلش."
@@ -153,7 +176,7 @@ export default function Home() {
           </div>
           <Link
             to="/cycle"
-            className="inline-flex items-center justify-center rounded-[1.5rem] bg-cream px-5 py-2.5 text-sm font-semibold text-rose-deep transition hover:bg-white"
+            className="inline-flex items-center justify-center rounded-[1.5rem] bg-cream px-5 py-2.5 text-sm font-semibold text-rose-deep transition hover:bg-paper"
           >
             فتح التقويم
           </Link>
