@@ -2,7 +2,7 @@ import { FloralDivider, FloralIllustration, IconRose } from "./Florals";
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto overflow-hidden border-t border-sand/80 bg-sand/40">
+    <footer className="relative z-10 mt-auto overflow-hidden border-t border-sand/80 bg-sand/40">
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <FloralIllustration
           name="corner"

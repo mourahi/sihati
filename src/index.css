@@ -121,3 +121,263 @@ html.dark .mix-blend-multiply {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-rose);
 }
+
+html.theme-3d {
+  color-scheme: light;
+  --color-canvas: #f3dce0;
+  --color-paper: #fff9f7;
+  --color-sand: #ebcdd2;
+}
+
+html.theme-3d body {
+  background-image:
+    linear-gradient(155deg, rgb(224 122 144 / 0.22), transparent 42%),
+    linear-gradient(330deg, rgb(110 154 134 / 0.16), transparent 38%),
+    radial-gradient(circle at 82% 10%, rgb(212 160 122 / 0.22), transparent 28%),
+    radial-gradient(circle at 50% 50%, rgb(224 122 144 / 0.07) 1.1px, transparent 1.4px);
+  background-size: auto, auto, auto, 18px 18px;
+}
+
+html.theme-3d h1,
+html.theme-3d h2.font-display,
+html.theme-3d .font-brand {
+  text-shadow:
+    2px 3px 0 rgb(224 122 144 / 0.16),
+    6px 10px 18px rgb(58 42 50 / 0.1);
+}
+
+html.theme-3d header {
+  border-bottom-color: rgb(255 255 255 / 0.35);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.85) inset,
+    0 10px 0 color-mix(in srgb, var(--color-rose) 14%, var(--color-sand)),
+    0 22px 36px rgb(196 93 116 / 0.18);
+}
+
+html.theme-3d footer {
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.5) inset,
+    0 -10px 28px rgb(58 42 50 / 0.08);
+}
+
+html.theme-3d main .grid {
+  perspective: 1200px;
+  padding-block: 0.6rem 1.2rem;
+}
+
+html.theme-3d a.group {
+  translate: none;
+  transform: translateZ(0);
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  border-color: color-mix(in srgb, var(--color-rose) 28%, white);
+  background:
+    linear-gradient(180deg, rgb(255 255 255 / 0.96), color-mix(in srgb, var(--color-paper) 88%, var(--color-sand)));
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.95) inset,
+    0 10px 0 var(--color-rose-deep),
+    14px 22px 0 color-mix(in srgb, var(--color-rose) 28%, transparent),
+    18px 32px 42px rgb(58 42 50 / 0.2);
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+html.theme-3d a.group:hover,
+html.theme-3d a.group:focus-visible {
+  translate: none;
+  transform: perspective(860px) rotateX(8deg) rotateY(-10deg) translateY(-8px);
+  border-color: color-mix(in srgb, var(--color-gold) 55%, white);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.95) inset,
+    0 6px 0 var(--color-rose),
+    8px 18px 0 color-mix(in srgb, var(--color-rose) 18%, transparent),
+    12px 28px 44px rgb(196 93 116 / 0.28);
+}
+
+html.theme-3d #ideal-weight,
+html.theme-3d nav[aria-label="باقي الأعضاء"] {
+  translate: none;
+  transform: none;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.9) inset,
+    0 6px 0 color-mix(in srgb, var(--color-sage) 22%, var(--color-sand)),
+    -10px 18px 0 color-mix(in srgb, var(--color-sage) 14%, transparent),
+    0 24px 36px rgb(58 42 50 / 0.12);
+}
+
+html.theme-3d input,
+html.theme-3d textarea {
+  box-shadow:
+    inset 0 2px 6px rgb(58 42 50 / 0.08),
+    0 5px 0 color-mix(in srgb, var(--color-rose) 18%, var(--color-sand)),
+    0 12px 20px rgb(224 122 144 / 0.12);
+}
+
+html.theme-3d button,
+html.theme-3d .btn-3d {
+  translate: none;
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.35) inset,
+    0 5px 0 color-mix(in srgb, var(--color-rose) 28%, var(--color-sand)),
+    0 12px 18px rgb(58 42 50 / 0.12);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+html.theme-3d button:hover,
+html.theme-3d .btn-3d:hover {
+  translate: none;
+  transform: translateY(2px);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.3) inset,
+    0 3px 0 color-mix(in srgb, var(--color-rose) 28%, var(--color-sand)),
+    0 8px 14px rgb(58 42 50 / 0.1);
+}
+
+html.theme-3d button:active,
+html.theme-3d .btn-3d:active {
+  translate: none;
+  transform: translateY(5px);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.2) inset,
+    0 0 0 color-mix(in srgb, var(--color-rose) 28%, var(--color-sand));
+}
+
+html.theme-3d .btn-3d.bg-rose,
+html.theme-3d a.bg-rose,
+html.theme-3d button.bg-rose,
+html.theme-3d span.bg-rose {
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.28) inset,
+    0 6px 0 var(--color-rose-deep),
+    0 14px 22px rgb(196 93 116 / 0.38);
+}
+
+html.theme-3d .btn-3d.bg-rose:hover,
+html.theme-3d a.bg-rose:hover,
+html.theme-3d button.bg-rose:hover {
+  transform: translateY(3px);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.22) inset,
+    0 3px 0 var(--color-rose-deep),
+    0 8px 16px rgb(196 93 116 / 0.3);
+}
+
+.scene-3d {
+  perspective: 900px;
+}
+
+.cube-3d {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  transform-style: preserve-3d;
+  animation: cube-spin 22s linear infinite;
+  opacity: 0.58;
+}
+
+.cube-face {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgb(255 255 255 / 0.5);
+}
+
+.cube-front {
+  transform: translateZ(36px);
+  background: color-mix(in srgb, var(--color-rose) 58%, white);
+}
+
+.cube-back {
+  transform: rotateY(180deg) translateZ(36px);
+  background: color-mix(in srgb, var(--color-rose-deep) 52%, white);
+}
+
+.cube-right {
+  transform: rotateY(90deg) translateZ(36px);
+  background: color-mix(in srgb, var(--color-gold) 58%, white);
+}
+
+.cube-left {
+  transform: rotateY(-90deg) translateZ(36px);
+  background: color-mix(in srgb, var(--color-sage) 52%, white);
+}
+
+.cube-top {
+  transform: rotateX(90deg) translateZ(36px);
+  background: color-mix(in srgb, var(--color-cream) 72%, var(--color-rose));
+}
+
+.cube-bottom {
+  transform: rotateX(-90deg) translateZ(36px);
+  background: color-mix(in srgb, var(--color-sand) 82%, var(--color-rose));
+}
+
+.cube-a {
+  top: 12%;
+  inset-inline-start: 3%;
+}
+
+.cube-b {
+  top: 36%;
+  inset-inline-end: 5%;
+  animation-duration: 16s;
+  animation-direction: reverse;
+}
+
+.cube-c {
+  bottom: 14%;
+  inset-inline-start: 8%;
+  animation-duration: 26s;
+}
+
+.cube-d {
+  bottom: 30%;
+  inset-inline-end: 9%;
+  animation-duration: 19s;
+  animation-direction: reverse;
+}
+
+@keyframes cube-spin {
+  from {
+    transform: rotateX(-18deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(-18deg) rotateY(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .cube-c,
+  .cube-d {
+    display: none;
+  }
+
+  .cube-3d {
+    opacity: 0.28;
+  }
+
+  html.theme-3d a.group,
+  html.theme-3d a.group:hover,
+  html.theme-3d #ideal-weight,
+  html.theme-3d nav[aria-label="باقي الأعضاء"] {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cube-3d {
+    animation: none;
+    opacity: 0.2;
+  }
+
+  html.theme-3d a.group,
+  html.theme-3d a.group:hover,
+  html.theme-3d button,
+  html.theme-3d .btn-3d,
+  html.theme-3d #ideal-weight,
+  html.theme-3d nav[aria-label="باقي الأعضاء"] {
+    transform: none;
+    transition: none;
+  }
+}

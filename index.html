@@ -19,12 +19,13 @@
       (function () {
         try {
           var theme = localStorage.getItem("sihati-theme");
-          if (theme !== "dark" && theme !== "light") {
+          if (theme !== "dark" && theme !== "light" && theme !== "three") {
             theme = window.matchMedia("(prefers-color-scheme: dark)").matches
               ? "dark"
               : "light";
           }
           if (theme === "dark") document.documentElement.classList.add("dark");
+          if (theme === "three") document.documentElement.classList.add("theme-3d");
         } catch (e) {}
       })();
     </script>

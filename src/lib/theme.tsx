@@ -1,36 +1,44 @@
 import { createContext, useCallback, useContext, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 
-export type Theme = 'light' | 'dark'
+export type Theme = 'light' | 'dark' | 'three'
 
 export const THEME_STORAGE_KEY = 'sihati-theme'
 
+const THEME_ORDER: Theme[] = ['light', 'dark', 'three']
+
 type ThemeContextValue = {
   theme: Theme
-  toggleTheme: () => void
+  cycleTheme: () => void
 }
 
 const ThemeContext = createContext<ThemeContextValue | null>(null)
 
 export function applyTheme(theme: Theme) {
   document.documentElement.classList.toggle('dark', theme === 'dark')
+  document.documentElement.classList.toggle('theme-3d', theme === 'three')
   localStorage.setItem(THEME_STORAGE_KEY, theme)
 }
 
-export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() =>
-    document.documentElement.classList.contains('dark') ? 'dark' : 'light',
-  )
+function readTheme(): Theme {
+  if (document.documentElement.classList.contains('theme-3d')) return 'three'
+  if (document.documentElement.classList.contains('dark')) return 'dark'
+  return 'light'
+}
 
-  const toggleTheme = useCallback(() => {
+export function ThemeProvider({ children }: { children: ReactNode }) {
+  const [theme, setTheme] = useState<Theme>(readTheme)
+
+  const cycleTheme = useCallback(() => {
     setTheme((current) => {
-      const next = current === 'dark' ? 'light' : 'dark'
+      const index = THEME_ORDER.indexOf(current)
+      const next = THEME_ORDER[(index + 1) % THEME_ORDER.length]
       applyTheme(next)
       return next
     })
   }, [])
 
-  const value = useMemo(() => ({ theme, toggleTheme }), [theme, toggleTheme])
+  const value = useMemo(() => ({ theme, cycleTheme }), [theme, cycleTheme])
 
   return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
 }
