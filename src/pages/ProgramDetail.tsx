@@ -6,7 +6,7 @@ import { ProgramZoneNav } from '../components/ProgramZoneNav'
 import { YoutubeEmbed } from '../components/YoutubeEmbed'
 import { programs } from '../data/content'
 import type { Program } from '../data/content'
-import { getZoneLabel, workoutsForZone } from '../lib/zones'
+import { getZoneLabel, programImageUrl, workoutsForZone } from '../lib/zones'
 
 function difficultyTone(difficulty: Program['difficulty']) {
   if (difficulty === 'سهل') return 'sage' as const
@@ -58,6 +58,14 @@ export default function ProgramDetail() {
             <Badge tone="sage">{getZoneLabel(program.zone)}</Badge>
           </div>
           <p className="mt-4 text-sm text-muted">{program.caloriesHint}</p>
+
+          <figure className="mt-8 overflow-hidden rounded-[1.5rem] border border-sand bg-sand shadow-[0_8px_30px_rgba(44,36,32,0.06)]">
+            <img
+              src={programImageUrl(program.zone)}
+              alt=""
+              className="aspect-[4/3] w-full object-cover"
+            />
+          </figure>
 
           {relatedWorkouts.length > 0 ? (
             <section className="mt-10">

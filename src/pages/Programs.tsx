@@ -3,7 +3,7 @@ import { Button } from '../components/Button'
 import { ProgramCard } from '../components/ProgramCard'
 import { SectionTitle } from '../components/SectionTitle'
 import { programs, zones } from '../data/content'
-import { getZoneLabel, isBodyZone } from '../lib/zones'
+import { getZoneLabel, isBodyZone, programImageUrl } from '../lib/zones'
 
 export default function Programs() {
   const [searchParams] = useSearchParams()
@@ -51,6 +51,7 @@ export default function Programs() {
               difficulty={program.difficulty}
               zoneLabel={getZoneLabel(program.zone)}
               href={`/programs/${program.id}`}
+              imageUrl={programImageUrl(program.zone)}
             />
           ))}
         </div>

@@ -8,7 +8,7 @@ import { ProgramCard } from '../components/ProgramCard'
 import { SectionTitle } from '../components/SectionTitle'
 import { ZoneCard } from '../components/ZoneCard'
 import { foodTips, gymClasses, programs, siteCopy, zones } from '../data/content'
-import { getZoneLabel } from '../lib/zones'
+import { getZoneLabel, programImageUrl } from '../lib/zones'
 
 export default function Home() {
   const featuredPrograms = programs.slice(0, 3)
@@ -107,6 +107,7 @@ export default function Home() {
               difficulty={program.difficulty}
               zoneLabel={getZoneLabel(program.zone)}
               href={`/programs/${program.id}`}
+              imageUrl={programImageUrl(program.zone)}
             />
           ))}
         </div>

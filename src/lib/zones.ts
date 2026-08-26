@@ -17,3 +17,7 @@ export function programPathForZone(zone: BodyZone) {
   const program = programs.find((item) => item.zone === zone)
   return program ? `/programs/${program.id}` : '/programs'
 }
+
+export function programImageUrl(zone: BodyZone) {
+  return `${import.meta.env.BASE_URL}programs/program-${zone}.png`
+}
