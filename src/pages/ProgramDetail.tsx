@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom'
 import { Badge } from '../components/Badge'
 import { Button } from '../components/Button'
+import { YoutubeEmbed } from '../components/YoutubeEmbed'
 import { programs } from '../data/content'
 import type { Program } from '../data/content'
-import { getZoneLabel } from '../lib/zones'
+import { getZoneLabel, workoutsForZone } from '../lib/zones'
 
 function difficultyTone(difficulty: Program['difficulty']) {
   if (difficulty === 'سهل') return 'sage' as const
@@ -29,6 +30,8 @@ export default function ProgramDetail() {
     )
   }
 
+  const relatedWorkouts = workoutsForZone(program.zone)
+
   return (
     <article className="mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16">
       <p className="text-sm font-medium text-gold">{getZoneLabel(program.zone)}</p>
@@ -46,6 +49,28 @@ export default function ProgramDetail() {
         <Badge tone="sage">{getZoneLabel(program.zone)}</Badge>
       </div>
       <p className="mt-4 text-sm text-muted">{program.caloriesHint}</p>
+
+      {relatedWorkouts.length > 0 ? (
+        <section className="mt-10">
+          <h2 className="font-display text-2xl font-bold text-ink">الرياضة المناسبة لهذه المنطقة</h2>
+          <p className="mt-2 text-sm text-muted">
+            فيديوهات مختارة لمنطقة {getZoneLabel(program.zone)}، تتابعينها من الدار مع البرنامج.
+          </p>
+          <div className="mt-6 space-y-8">
+            {relatedWorkouts.map((workout) => (
+              <article key={workout.id}>
+                <YoutubeEmbed youtubeId={workout.youtubeId} title={workout.title} />
+                <div className="mt-3 flex flex-wrap items-center gap-2">
+                  <Badge tone="sage">{workout.level}</Badge>
+                  <Badge tone="sand">{workout.durationMin} دقيقة</Badge>
+                </div>
+                <h3 className="mt-2 font-display text-xl font-bold text-ink">{workout.title}</h3>
+                <p className="text-sm text-muted">{workout.channel}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       <section className="mt-12">
         <h2 className="font-display text-2xl font-bold text-ink">الأهداف</h2>
@@ -105,10 +130,7 @@ export default function ProgramDetail() {
         </ul>
       </section>
 
-      <div className="mt-12 flex flex-wrap gap-3">
-        <Button variant="primary" to={`/workouts?zone=${program.zone}`}>
-          رياضة لهذه المنطقة
-        </Button>
+      <div className="mt-12">
         <Button variant="ghost" to="/programs">
           كل البرامج
         </Button>

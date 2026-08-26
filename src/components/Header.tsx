@@ -1,12 +1,11 @@
 import { useEffect, useId, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { IconBlossom, IconLeaf, IconMoon, IconRose } from "./Florals";
+import { IconBlossom, IconMoon, IconRose } from "./Florals";
 import { SearchBar } from "./SearchBar";
 
 const NAV_ITEMS = [
   { to: "/", label: "الرئيسية", end: true, Icon: IconRose },
   { to: "/programs", label: "البرامج", end: false, Icon: IconBlossom },
-  { to: "/workouts", label: "الرياضة", end: false, Icon: IconLeaf },
   { to: "/nutrition", label: "المطبخ", end: false, Icon: IconRose },
   { to: "/cycle", label: "الدورة", end: false, Icon: IconMoon },
   { to: "/about", label: "عن صحتي", end: false, Icon: IconBlossom },

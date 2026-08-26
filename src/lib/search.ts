@@ -1,5 +1,5 @@
 import { foodTips, programs, workouts, zones } from '../data/content'
-import { getZoneLabel } from './zones'
+import { getZoneLabel, programPathForZone } from './zones'
 
 export type SearchHit = {
   id: string
@@ -23,7 +23,6 @@ function normalize(value: string) {
 const PAGES: SearchHit[] = [
   { id: 'page-home', title: 'الرئيسية', hint: 'صفحة البداية', href: '/', kind: 'صفحة' },
   { id: 'page-programs', title: 'البرامج', hint: 'مسارات حسب منطقة الجسم', href: '/programs', kind: 'صفحة' },
-  { id: 'page-workouts', title: 'الرياضة', hint: 'فيديوهات تمارين في البيت', href: '/workouts', kind: 'صفحة' },
   { id: 'page-nutrition', title: 'المطبخ الصحي', hint: 'وصفات مغربية خفيفة', href: '/nutrition', kind: 'صفحة' },
   { id: 'page-cycle', title: 'تتبع الدورة الشهرية', hint: 'تقويم ملون برقم سري', href: '/cycle', kind: 'صفحة' },
   { id: 'page-about', title: 'عن صحتي', hint: 'قيم الموقع والتنبيه الطبي', href: '/about', kind: 'صفحة' },
@@ -50,7 +49,7 @@ function catalog(): SearchHit[] {
     id: `workout-${workout.id}`,
     title: workout.title,
     hint: `${workout.durationMin} دقيقة · ${getZoneLabel(workout.zone)}`,
-    href: `/workouts/${workout.youtubeId}`,
+    href: programPathForZone(workout.zone),
     kind: 'رياضة',
   }))
 

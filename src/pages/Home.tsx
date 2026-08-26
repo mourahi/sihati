@@ -5,9 +5,8 @@ import { FloralDivider, FloralIllustration, IconMoon } from '../components/Flora
 import { FoodCard } from '../components/FoodCard'
 import { ProgramCard } from '../components/ProgramCard'
 import { SectionTitle } from '../components/SectionTitle'
-import { WorkoutCard } from '../components/WorkoutCard'
 import { ZoneCard } from '../components/ZoneCard'
-import { foodTips, programs, siteCopy, workouts, zones } from '../data/content'
+import { foodTips, programs, siteCopy, zones } from '../data/content'
 import { getZoneLabel } from '../lib/zones'
 
 export default function Home() {
@@ -57,8 +56,8 @@ export default function Home() {
             <Button variant="primary" to="/programs">
               البرامج
             </Button>
-            <Button variant="ghost" to="/workouts">
-              الرياضة
+            <Button variant="ghost" to="/nutrition">
+              المطبخ
             </Button>
           </div>
           <p className="mt-8 text-xs text-muted">
@@ -109,32 +108,6 @@ export default function Home() {
         <div className="mt-8 text-center">
           <Button variant="ghost" to="/programs">
             كل البرامج
-          </Button>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
-        <SectionTitle
-          eyebrow="الرياضة"
-          title="فيديوهات تتبعينها في البيت"
-          subtitle="مدربات معروفات على يوتوب، مدة قصيرة، وتختارين المنطقة اللي تهمّك."
-        />
-        <div className="mt-10 grid gap-4 md:grid-cols-3">
-          {workouts.slice(0, 3).map((workout) => (
-            <WorkoutCard
-              key={workout.id}
-              title={workout.title}
-              durationMin={workout.durationMin}
-              level={workout.level}
-              youtubeId={workout.youtubeId}
-              channel={workout.channel}
-              zoneLabel={getZoneLabel(workout.zone)}
-            />
-          ))}
-        </div>
-        <div className="mt-8 text-center">
-          <Button variant="ghost" to="/workouts">
-            كل الفيديوهات
           </Button>
         </div>
       </section>
