@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Badge } from "./Badge";
+import { IconBlossom, IconLeaf } from "./Florals";
 
 type ProgramCardProps = {
   id: string;
@@ -41,8 +42,9 @@ export function ProgramCard({
     <Link
       id={id}
       to={href}
-      className="group flex flex-col rounded-[1.5rem] border border-sand bg-white/70 p-6 shadow-[0_8px_30px_rgba(44,36,32,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_12px_40px_rgba(44,36,32,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
+      className="group relative flex flex-col rounded-[1.5rem] border border-sand bg-white/70 p-6 shadow-[0_8px_30px_rgba(44,36,32,0.06)] transition duration-200 hover:-translate-y-0.5 hover:border-gold/40 hover:shadow-[0_12px_40px_rgba(44,36,32,0.1)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
     >
+      <IconBlossom className="pointer-events-none absolute top-3 end-3 h-3.5 w-3.5 text-rose/35" />
       <div className="flex flex-wrap items-center gap-2">
         <Badge tone={tone}>{difficulty}</Badge>
         <Badge tone="sand">{durationWeeks} أسابيع</Badge>
@@ -51,7 +53,10 @@ export function ProgramCard({
         {title}
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-muted">{subtitle}</p>
-      <p className="mt-4 text-xs font-medium text-sage">{zoneLabel}</p>
+      <p className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-sage">
+        <IconLeaf className="h-3.5 w-3.5 text-sage" />
+        {zoneLabel}
+      </p>
     </Link>
   );
 }

@@ -1,4 +1,5 @@
 import { Button } from '../components/Button'
+import { IconBlossom, IconLeaf, IconRose } from '../components/Florals'
 import { SectionTitle } from '../components/SectionTitle'
 import { siteCopy } from '../data/content'
 
@@ -6,14 +7,17 @@ const values = [
   {
     title: 'اللطف',
     text: 'ما كاينش عقاب على الأكل، وما كاينش «غدْوة نبدأ من الصفر». صحتي كتكلّم معاكِ بحنان: يوم عادي أحسن من أسبوع قاسي ثم انقطاع.',
+    Icon: IconRose,
   },
   {
     title: 'المغرب',
     text: 'الكسكس، الحريرة، التشريملة، النعنع، زيت الأركان… هاد المائدة هي الأصل. ما خصناش نبدّلو هويتنا باش نحسّو بالخفة. غير نعدّلو الكمية والزيت والسكر.',
+    Icon: IconBlossom,
   },
   {
     title: 'الواقعية',
     text: 'تمارين من الدار، مدد قصيرة، وبرامج ثلاثة أو أربعة أسابيع. بلا معدات غالية وبلا وعود «بطن مسطّح في سبعة أيام». الخطوة الصغيرة اللي تتكرّر هي اللي كتبدّل.',
+    Icon: IconLeaf,
   },
 ]
 
@@ -40,13 +44,16 @@ export default function About() {
       <section className="mt-12">
         <h2 className="font-display text-2xl font-bold text-ink">لمن هذا الموقع؟</h2>
         <ul className="mt-4 space-y-3 text-muted">
-          <li className="rounded-[1.25rem] bg-sand/70 px-4 py-3">
+          <li className="flex items-start gap-2 rounded-[1.25rem] bg-sand/70 px-4 py-3">
+            <IconBlossom className="mt-1 h-3.5 w-3.5 shrink-0 text-rose/70" />
             للمرأة اللي بغات تخفّف البطن أو الخصر أو الأفخاذ أو الذراعين، بخطوات واقعية.
           </li>
-          <li className="rounded-[1.25rem] bg-sand/70 px-4 py-3">
+          <li className="flex items-start gap-2 rounded-[1.25rem] bg-sand/70 px-4 py-3">
+            <IconBlossom className="mt-1 h-3.5 w-3.5 shrink-0 text-rose/70" />
             للي كتطبخ مغربي وكترفض الأنظمة اللي كتحرم الحريرة والكسكس دفعة واحدة.
           </li>
-          <li className="rounded-[1.25rem] bg-sand/70 px-4 py-3">
+          <li className="flex items-start gap-2 rounded-[1.25rem] bg-sand/70 px-4 py-3">
+            <IconBlossom className="mt-1 h-3.5 w-3.5 shrink-0 text-rose/70" />
             للمبتدئة، ولللي رجعات للرياضة بعد انقطاع، ولللي عندها غير ربع ساعة في النهار.
           </li>
         </ul>
@@ -60,7 +67,10 @@ export default function About() {
               key={value.title}
               className="rounded-[1.5rem] border border-sand bg-white/70 p-5"
             >
-              <h3 className="font-display text-xl font-bold text-rose-deep">{value.title}</h3>
+              <h3 className="flex items-center gap-2 font-display text-xl font-bold text-rose-deep">
+                <value.Icon className="h-5 w-5 shrink-0 text-rose" />
+                {value.title}
+              </h3>
               <p className="mt-2 text-sm leading-relaxed text-muted">{value.text}</p>
             </article>
           ))}

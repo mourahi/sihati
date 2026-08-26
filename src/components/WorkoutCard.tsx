@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Badge } from "./Badge";
+import { IconBlossom } from "./Florals";
 
 type WorkoutCardProps = {
   title: string;
@@ -60,6 +61,12 @@ export function WorkoutCard({
         <Badge tone="sand" className="absolute bottom-3 start-3 bg-cream/90">
           {durationMin} دقيقة
         </Badge>
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute top-3 end-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-cream/85 text-rose"
+        >
+          <IconBlossom className="h-3.5 w-3.5" />
+        </span>
       </div>
       <div className="flex flex-1 flex-col p-5">
         <div className="flex flex-wrap items-center gap-2">

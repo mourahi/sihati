@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Badge } from "./Badge";
+import { IconBlossom, IconRose } from "./Florals";
 
 type FoodCardProps = {
   id: string;
@@ -55,9 +56,16 @@ export function FoodCard({
         <Badge tone={categoryTone(category)} className="absolute bottom-3 start-3 bg-cream/90">
           {category}
         </Badge>
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute top-3 end-3 inline-flex h-7 w-7 items-center justify-center rounded-full bg-cream/85 text-rose"
+        >
+          <IconRose className="h-3.5 w-3.5" />
+        </span>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <h3 className="font-display text-xl font-bold text-ink group-hover:text-rose-deep">
+        <h3 className="inline-flex items-center gap-1.5 font-display text-xl font-bold text-ink group-hover:text-rose-deep">
+          <IconBlossom className="h-3.5 w-3.5 shrink-0 text-rose" />
           {title}
         </h3>
         <p className="mt-2 text-sm leading-relaxed text-muted">{summary}</p>

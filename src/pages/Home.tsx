@@ -1,22 +1,13 @@
 import { Badge } from '../components/Badge'
 import { Button } from '../components/Button'
+import { FloralDivider, FloralIllustration } from '../components/Florals'
 import { FoodCard } from '../components/FoodCard'
 import { ProgramCard } from '../components/ProgramCard'
 import { SectionTitle } from '../components/SectionTitle'
 import { WorkoutCard } from '../components/WorkoutCard'
 import { ZoneCard } from '../components/ZoneCard'
 import { foodTips, programs, siteCopy, workouts, zones } from '../data/content'
-import type { BodyZone } from '../data/content'
 import { getZoneLabel } from '../lib/zones'
-
-const ZONE_EMOJI: Record<BodyZone, string> = {
-  belly: '🌿',
-  waist: '✨',
-  thighs: '🚶',
-  arms: '💪',
-  hips: '🍑',
-  full: '🌸',
-}
 
 export default function Home() {
   const featuredPrograms = programs.slice(0, 3)
@@ -33,12 +24,31 @@ export default function Home() {
           aria-hidden="true"
           className="pointer-events-none absolute -end-10 bottom-0 h-56 w-56 rounded-full bg-sage/10 blur-3xl"
         />
+        <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+          <FloralIllustration
+            name="corner"
+            alt=""
+            className="absolute -start-8 -top-6 h-[170px] w-[170px] mix-blend-multiply opacity-50"
+          />
+          <FloralIllustration
+            name="sprig"
+            alt=""
+            className="absolute -end-6 bottom-2 h-[150px] w-[150px] mix-blend-multiply opacity-45"
+          />
+        </div>
         <div className="relative mx-auto max-w-3xl text-center">
-          <p className="font-sans text-sm font-medium text-rose">{siteCopy.tagline}</p>
+          <p className="flex items-center justify-center gap-1.5 font-sans text-sm font-medium text-rose">
+            <FloralIllustration
+              name="roses"
+              alt=""
+              className="pointer-events-none h-8 w-8 mix-blend-multiply opacity-55"
+            />
+            {siteCopy.tagline}
+          </p>
           <h1 className="mt-4 font-display text-[2.15rem] font-semibold leading-relaxed text-ink sm:text-[2.85rem]">
             {siteCopy.heroTitle}
           </h1>
-          <span aria-hidden="true" className="mx-auto mt-5 block h-px w-20 bg-rose/50" />
+          <FloralDivider />
           <p className="mt-5 text-base leading-relaxed text-muted sm:text-lg">
             {siteCopy.heroSubtitle}
           </p>
@@ -70,7 +80,6 @@ export default function Home() {
               label={zone.label}
               description={zone.description}
               href={`/programs?zone=${zone.id}`}
-              emoji={ZONE_EMOJI[zone.id]}
             />
           ))}
         </div>

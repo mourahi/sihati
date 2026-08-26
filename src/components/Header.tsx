@@ -1,12 +1,13 @@
 import { useEffect, useId, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
+import { IconBlossom, IconLeaf, IconRose } from "./Florals";
 
 const NAV_ITEMS = [
-  { to: "/", label: "الرئيسية", end: true },
-  { to: "/programs", label: "البرامج", end: false },
-  { to: "/workouts", label: "الرياضة", end: false },
-  { to: "/nutrition", label: "المطبخ الصحي", end: false },
-  { to: "/about", label: "عن صحتي", end: false },
+  { to: "/", label: "الرئيسية", end: true, Icon: IconRose },
+  { to: "/programs", label: "البرامج", end: false, Icon: IconBlossom },
+  { to: "/workouts", label: "الرياضة", end: false, Icon: IconLeaf },
+  { to: "/nutrition", label: "المطبخ الصحي", end: false, Icon: IconRose },
+  { to: "/about", label: "عن صحتي", end: false, Icon: IconBlossom },
 ] as const;
 
 function linkClass(isActive: boolean, compact: boolean) {
@@ -47,20 +48,24 @@ export function Header() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <Link
           to="/"
-          className="font-brand text-[1.95rem] font-bold leading-none text-rose-deep transition hover:text-rose focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
+          className="inline-flex items-center gap-2 font-brand text-[1.95rem] font-bold leading-none text-rose-deep transition hover:text-rose focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-rose"
           aria-label="صحتي — الصفحة الرئيسية"
         >
+          <IconRose className="h-6 w-6 text-rose" />
           صحتي
         </Link>
 
-        <nav aria-label="التنقل الرئيسي" className="hidden items-center gap-7 md:flex">
+        <nav aria-label="التنقل الرئيسي" className="hidden items-center gap-6 md:flex">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.to}
               to={item.to}
               end={item.end}
-              className={({ isActive }) => linkClass(isActive, false)}
+              className={({ isActive }) =>
+                `inline-flex items-center gap-1.5 ${linkClass(isActive, false)}`
+              }
             >
+              <item.Icon className="h-3.5 w-3.5 text-rose/80" />
               {item.label}
             </NavLink>
           ))}
@@ -112,8 +117,11 @@ export function Header() {
               key={item.to}
               to={item.to}
               end={item.end}
-              className={({ isActive }) => linkClass(isActive, true)}
+              className={({ isActive }) =>
+                `inline-flex items-center gap-2 ${linkClass(isActive, true)}`
+              }
             >
+              <item.Icon className="h-4 w-4 text-rose/80" />
               {item.label}
             </NavLink>
           ))}
