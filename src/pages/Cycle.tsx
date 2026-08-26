@@ -244,7 +244,26 @@ export default function Cycle() {
         </p>
       )}
 
-      <section className="mt-8 rounded-[1.75rem] border border-sand bg-white/75 p-4 shadow-[0_10px_32px_rgba(44,36,32,0.06)] sm:p-6">
+      <div className="mt-8 grid gap-3 sm:grid-cols-2">
+        <Stepper
+          label="طول الدورة"
+          value={settings.cycleLength}
+          min={21}
+          max={40}
+          unit="يوم"
+          onChange={(cycleLength) => update({ ...settings, cycleLength })}
+        />
+        <Stepper
+          label="أيام الحيض"
+          value={settings.periodLength}
+          min={3}
+          max={10}
+          unit="أيام"
+          onChange={(periodLength) => update({ ...settings, periodLength })}
+        />
+      </div>
+
+      <section className="mt-4 rounded-[1.75rem] border border-sand bg-white/75 p-4 shadow-[0_10px_32px_rgba(44,36,32,0.06)] sm:p-6">
         <div className="flex items-center justify-between gap-3">
           <button
             type="button"
@@ -326,25 +345,6 @@ export default function Cycle() {
           </li>
         ))}
       </ul>
-
-      <div className="mt-6 grid gap-3 sm:grid-cols-2">
-        <Stepper
-          label="طول الدورة"
-          value={settings.cycleLength}
-          min={21}
-          max={40}
-          unit="يوم"
-          onChange={(cycleLength) => update({ ...settings, cycleLength })}
-        />
-        <Stepper
-          label="أيام الحيض"
-          value={settings.periodLength}
-          min={3}
-          max={10}
-          unit="أيام"
-          onChange={(periodLength) => update({ ...settings, periodLength })}
-        />
-      </div>
 
       {startDate && upcoming ? (
         <p className="mt-6 rounded-[1.5rem] border border-gold/35 bg-sand/70 px-5 py-4 text-sm leading-relaxed text-ink">
