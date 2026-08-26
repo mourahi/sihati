@@ -1,4 +1,4 @@
-export type BodyZone = 'belly' | 'waist' | 'thighs' | 'arms' | 'hips' | 'full'
+﻿export type BodyZone = 'belly' | 'waist' | 'thighs' | 'arms' | 'hips' | 'full'
 
 export type Program = {
   id: string
@@ -131,7 +131,7 @@ export const programs: Program[] = [
         '10 دقائق تمارين بطن للمبتدئات + مشي 20 دقيقة',
       ],
       [
-        'فطور: شوفان بالحليب قليل الدسم وتفاحة. غداء: طاجين دجاج بالخضر (زيت قليل). عشاء: شوربة خضر.',
+        'فطور: حرشة صغيرة + ياغورت وتمر. غداء: طاجين دجاج بالخضر (زيت قليل). عشاء: شوربة خضر.',
         'يوغا خفيفة 20 دقيقة لتهدئة البطن والظهر',
       ],
       [
@@ -147,7 +147,7 @@ export const programs: Program[] = [
         'تمارين بطن متوسطة 10 دقائق',
       ],
       [
-        'فطور: حريرة صغيرة أو شوفان. غداء: طاجين خضر. عشاء: سلطة + بيض.',
+        'فطور: حريرة صغيرة أو خبز شعير وزيتون. غداء: طاجين خضر. عشاء: سلطة + بيض.',
         'راحة نشطة: تمدد 15 دقيقة',
       ],
       [
@@ -191,7 +191,7 @@ export const programs: Program[] = [
         'تمارين خصر + كارديو خفيف 10 دقائق',
       ],
       [
-        'فطور: شوفان. غداء: حريرة + قطعة خبز كامل صغيرة. عشاء: خضر مشوية.',
+        'فطور: حرشة مشوية + ياغورت. غداء: حريرة + قطعة خبز كامل صغيرة. عشاء: خضر مشوية.',
         'يوغا للمبتدئات 20 دقيقة',
       ],
       [
@@ -234,7 +234,7 @@ export const programs: Program[] = [
         'تمارين أفخاذ 15 دقيقة (بدون قفز إن آلمكِ الركبة)',
       ],
       [
-        'فطور: شوفان. غداء: طاجين دجاج. عشاء: شوربة.',
+        'فطور: بيض ومطيشة + خبز شعير. غداء: طاجين دجاج. عشاء: شوربة.',
         'مشي 30 دقيقة',
       ],
       [
@@ -289,7 +289,7 @@ export const programs: Program[] = [
         'مشي 25 دقيقة',
       ],
       [
-        'فطور: شوفان. غداء: عدس. عشاء: سلطة.',
+        'فطور: خبز كامل + زيتون وطماطم. غداء: عدس. عشاء: سلطة.',
         'تمارين ذراعين بأسلوب هادئ (بيلاتس)',
       ],
       [
@@ -332,7 +332,7 @@ export const programs: Program[] = [
     ],
     weeklyPlan: plan([
       [
-        'فطور: بيض وشوفان. غداء: دجاج وخضر. عشاء: سلطة.',
+        'فطور: بيض ومطيشة. غداء: دجاج وخضر. عشاء: سلطة.',
         'تمارين أرداف 15 دقيقة بدون معدات',
       ],
       [
@@ -348,7 +348,7 @@ export const programs: Program[] = [
         'يوغا 20 دقيقة',
       ],
       [
-        'فطور: شوفان. غداء: سلطة دجاج. عشاء: حمص.',
+        'فطور: ياغورت وتمر ولوز. غداء: سلطة دجاج. عشاء: حمص.',
         'تمارين أرداف 15 دقيقة',
       ],
       [
@@ -387,7 +387,7 @@ export const programs: Program[] = [
         'مشي في البيت 20 دقيقة (فيديو مشي)',
       ],
       [
-        'فطور: شوفان. غداء: طاجين خضر. عشاء: ياغورت وفاكهة.',
+        'فطور: حرشة + ياغورت. غداء: طاجين خضر. عشاء: ياغورت وفاكهة.',
         'يوغا للمبتدئات 20 دقيقة',
       ],
       [
@@ -548,14 +548,15 @@ export const workouts: Workout[] = [
   },
 ]
 
+const ytThumb = (id: string) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`
+
 export const foodTips: FoodTip[] = [
   {
     id: 'harira-light',
     title: 'حريرة خفيفة',
     category: 'عشاء',
     summary: 'شوربة مغربية مغذية بكمية أقل من السميد والزيت، مثالية بعد يوم طويل.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80',
+    imageUrl: ytThumb('K0vbwA58uAk'),
     youtubeId: 'K0vbwA58uAk',
     channel: 'Kuzina With Simo',
     ingredients: [
@@ -580,8 +581,7 @@ export const foodTips: FoodTip[] = [
     title: 'طاجين الدجاج بالخضر',
     category: 'غداء',
     summary: 'نفس الروح المغربية: زيتون، ليمون مصبّر، وخضر أكثر من اللحم.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80',
+    imageUrl: ytThumb('B9eKYdU4Y4w'),
     youtubeId: 'B9eKYdU4Y4w',
     channel: 'Cuisine Marocaine',
     ingredients: [
@@ -594,7 +594,7 @@ export const foodTips: FoodTip[] = [
       'لا تقلي الدجاج في زيت غزير؛ شوّحيه قليلاً ثم أضيفي ماءً ليطهى على نار هادئة.',
       'ضعي الخضر فوق الدجاج حتى تمتص النكهة.',
       'الملح من الليمون المصبر والزيتون يكفي غالباً.',
-      'مغرفة الصلصة على الأرز البني أو خبز كامل، لا صحن مزدوج.',
+      'مغرفة الصلصة مع خبز كامل أو سميدة قليلة، لا صحن مزدوج.',
     ],
     whyHealthy: 'بروتين مع ألياف الخضر؛ الزيتون يعطي نكهة تغنيكِ عن الزيت الزائد.',
     swapFrom: 'بدل طاجين اللحم الدهني المقلي، اختاري الدجاج والخضر.',
@@ -604,8 +604,7 @@ export const foodTips: FoodTip[] = [
     title: 'كسكس بالخضر بحصة عاقلة',
     category: 'غداء',
     summary: 'الجمعة تبقى جمعة: الخضر هي الأساس والسميد مرافِق لا جبل.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80',
+    imageUrl: ytThumb('AKHYcKwa3Uw'),
     youtubeId: 'AKHYcKwa3Uw',
     channel: 'Choumicha Chafay',
     ingredients: [
@@ -627,10 +626,9 @@ export const foodTips: FoodTip[] = [
     title: 'سلطة مغربية منعشة',
     category: 'غداء',
     summary: 'طماطم، خيار، فلفل، وزيتون: تفتح الشهية وتملأ الصحن بألوان لا بزيت.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80',
-    youtubeId: 'kfrjbEDd-OE',
-    channel: 'Foodotomic',
+    imageUrl: ytThumb('qz2JbJBZd1o'),
+    youtubeId: 'qz2JbJBZd1o',
+    channel: "Salima's Kitchen",
     ingredients: [
       'طماطم، خيار، فلفل أخضر أو أحمر',
       'بصلة حمراء رقيقة، قزبرة',
@@ -649,10 +647,9 @@ export const foodTips: FoodTip[] = [
     title: 'عدس بالكمون',
     category: 'غداء',
     summary: 'طبق فقير في الثمن، غني بالحديد والبروتين، مثالي لأيام الزحمة.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80',
-    youtubeId: 'vbkdSy93hHI',
-    channel: 'OhDelices Culinary Academy',
+    imageUrl: ytThumb('pg86YuE7dao'),
+    youtubeId: 'pg86YuE7dao',
+    channel: 'Mcuisine - مطبخ مونية',
     ingredients: [
       'عدس مغسول',
       'بصل، ثوم، طماطم',
@@ -672,8 +669,7 @@ export const foodTips: FoodTip[] = [
     title: 'أتاي بالنعناع بلا سكر كثير',
     category: 'مشروبات',
     summary: 'الضيافة المغربية تبقى، والحلاوة تقل: النعناع هو النجم لا السكر.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=80',
+    imageUrl: ytThumb('IazhvG1bLCU'),
     youtubeId: 'IazhvG1bLCU',
     channel: 'cookingwithalia',
     ingredients: ['شاي أخضر', 'نعناع طازج وفير', 'سكر حسب الضيف: ملعقة صغيرة أو بدون', 'ماء ساخن'],
@@ -687,30 +683,34 @@ export const foodTips: FoodTip[] = [
   },
   {
     id: 'argan-oil',
-    title: 'زيت الأركان باعتدال',
+    title: 'أملو وزيت الأركان باعتدال',
     category: 'عادات',
-    summary: 'كنز سوسي للنكهة والشعر والبشرة… ومعلقة في الطبخ تكفي.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=80',
-    youtubeId: 'TSRC4yy0w-U',
+    summary: 'كنز سوسي: لوز محمص، زيت أركان، وعسل… ومعلقة صغيرة تكفي.',
+    imageUrl: ytThumb('0PaqzglqpzY'),
+    youtubeId: '0PaqzglqpzY',
     channel: 'DinnersWithDave',
-    ingredients: ['زيت أركان أصلي للطعام (الغذائي لا التجميلي)', 'خضر أو أملو بكمية صغيرة'],
-    howTo: [
-      'رشة على السلطة أو بعد طهي الخضر، لا للقلي العميق.',
-      'الأملو غني: ملعقة صغيرة مع خبز كامل في الفطور، لا صحن كامل يومياً.',
+    ingredients: [
+      'لوز محمص',
+      'زيت أركان غذائي (ليس التجميلي)',
+      'ملعقة عسل صغيرة حسب الذوق',
+      'رشة ملح',
     ],
-    whyHealthy: 'دهون جيدة، لكن السعرات تبقى سعرات؛ الجودة لا تعني الإكثار.',
-    swapFrom: 'بدل قلي كل شيء في زيت كثير، زيّني بعد الطبخ.',
+    howTo: [
+      'اطحني اللوز حتى يصبح زبدة، ثم أضيفي زيت الأركان والعسل.',
+      'ملعقة صغيرة على خبز شعير أو حرشة، لا صحن كامل يومياً.',
+      'رشة أركان على السلطة بعد الطبخ، لا للقلي العميق.',
+    ],
+    whyHealthy: 'دهون جيدة ونكهة مغربية أصيلة، لكن السعرات تبقى سعرات؛ الجودة لا تعني الإكثار.',
+    swapFrom: 'بدل قلي كل شيء في زيت كثير أو أملو بالملعقة الكبيرة كل صباح.',
   },
   {
     id: 'fish-chermoula',
     title: 'سمك مشوي بالتشريملة',
     category: 'عشاء',
     summary: 'قزبرة، ثوم، بابريكا، وليمون: نكهة كبيرة وسعرات أقل من القلي.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80',
-    youtubeId: '--P8zMyTC1w',
-    channel: "America's Test Kitchen",
+    imageUrl: ytThumb('19v8q1fvo7M'),
+    youtubeId: '19v8q1fvo7M',
+    channel: 'Kuzina With Simo',
     ingredients: [
       'سمك أبيض أو سردين حسب الموسم',
       'قزبرة، معدنوس، ثوم، بابريكا، كمون',
@@ -726,57 +726,55 @@ export const foodTips: FoodTip[] = [
   },
   {
     id: 'breakfast-eggs',
-    title: 'فطور البيض والخبز الكامل',
+    title: 'فطور البيض والمطيشة',
     category: 'فطور',
-    summary: 'بداية اليوم التي تمنع القضم العشوائي حتى الغداء.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=80',
-    youtubeId: 'hb0Elaa6gxY',
-    channel: 'J. Kenji López-Alt',
+    summary: 'بيض ومطيشة على الطريقة المغربية: بداية تشبع وتمنع القضم حتى الغداء.',
+    imageUrl: ytThumb('ZD17vxMsa94'),
+    youtubeId: 'ZD17vxMsa94',
+    channel: 'Kuzina With Simo',
     ingredients: [
-      'بيضتان مسلوقتان أو مطبوختان بقليل من الزيت',
-      'شريحة خبز كامل أو شعير',
-      'زيتون أسود، طماطم أو خيار',
-      'شاي نعنع خفيف السكر',
+      'بيضتان',
+      'طماطم ناضجة، ثوم، فلفل اختياري',
+      'كمون، بابريكا، ملعقة زيت زيتون',
+      'خبز شعير أو كامل، زيتون',
+      'أتاي نعنع خفيف السكر',
     ],
     howTo: [
-      'حضّري البيض مسبقاً إن كان الصباح مزدحماً.',
-      'اجعلي الزيتون والتوابل يعطيان النكهة بدل الجبن الدسم جداً.',
+      'شوّحي الطماطم والتوابل حتى تصبح مطيشة، ثم كسري البيض فوقها.',
+      'قدّمي مع خبز كامل وزيتون، لا مسمن يومي.',
       'اجلسي للأكل ولو خمس دقائق؛ الفطور واقفةً يمرّ دون شبع.',
     ],
-    whyHealthy: 'البروتين في الصباح يقلل الاندفاع نحو الحلويات عند الظهر.',
+    whyHealthy: 'البروتين والخضر في الصباح يقلّلان الاندفاع نحو الحلويات عند الظهر.',
     swapFrom: 'بدل فطور مسمن أو حرشة بالزبدة والعسل الغزير كل يوم.',
   },
   {
     id: 'snack-smart',
-    title: 'سناك ذكي: لوز وياغورت وفاكهة',
+    title: 'تمر محشي باللوز',
     category: 'سناك',
-    summary: 'بين الوجبات، اختاري ما يسكت الجوع لا ما يشعله.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80',
-    youtubeId: 'UM6Xg4WaWqk',
-    channel: 'India Food Network',
-    ingredients: ['10 حبات لوز', 'ياغورت طبيعي', 'تفاحة أو برتقالة أو حبتا تمر'],
+    summary: 'سناك مغربي أصيل: تمرتان ولوز، يشبع أحسن من البسكويت.',
+    imageUrl: ytThumb('4f4pF3lIxI8'),
+    youtubeId: '4f4pF3lIxI8',
+    channel: 'cookingwithalia',
+    ingredients: ['تمرتان أو ثلاث', 'لوز أو جوز', 'ياغورت طبيعي اختياري'],
     howTo: [
-      'ضعي اللوز في علبة صغيرة حتى لا تأكلي الكيس.',
-      'التمر حلوٍ ومفيد: حبتان بعد الأكل لا حفنة أمام التلفزيون.',
-      'إن كان العشاء قريباً، اكتفي بفاكهة.',
+      'انزعي النوى واحشي التمرة بلوزة واحدة.',
+      'حبتان بعد الأكل أو بين الوجبات، لا حفنة أمام التلفزيون.',
+      'إن كان العشاء قريباً، اكتفي بتمرة واحدة أو ياغورت.',
     ],
-    whyHealthy: 'دهون جيدة وألياف وبروتين خفيف توقف الجوع أفضل من البسكويت.',
+    whyHealthy: 'التمر واللوز من مائدة الدار؛ ألياف ودهون جيدة توقف الجوع دون شيبس.',
     swapFrom: 'بدل الشيبس والحلويات المغلّفة وقت الانتظار.',
   },
   {
     id: 'sweets-swap',
     title: 'الحلويات المغربية بذكاء',
     category: 'عادات',
-    summary: 'الغريبية والشباكية فرح المناسبات، لا عادة يومية.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80',
-    youtubeId: '35z2-EE1iGQ',
-    channel: 'Gourmandises by Nora',
+    summary: 'الشباكية والغريبية فرح المناسبات، لا عادة يومية.',
+    imageUrl: ytThumb('kR_E_i5cMOU'),
+    youtubeId: 'kR_E_i5cMOU',
+    channel: 'cookingwithalia',
     ingredients: ['فاكهة موسمية', 'ياغورت', 'تمر', 'مكسرات قليلة'],
     howTo: [
-      'في العرس أو رمضان: تذوقي قطعة واحدة بوعي، لا صحن المتابعة.',
+      'في العرس أو رمضان: تذوقي قطعة شباكية واحدة بوعي، لا صحن المتابعة.',
       'في البيت: حضّري فاكهة مقطعة جميلة كأنها ضيافة.',
       'الشيشة والشاي الحلو مع الحلويات يضاعفان السكر؛ اختاري واحداً.',
     ],
@@ -788,8 +786,7 @@ export const foodTips: FoodTip[] = [
     title: 'خبز البيت أخف',
     category: 'فطور',
     summary: 'خبز كامل أو شعير مشوي، لا بطبوط مقلي كل صباح.',
-    imageUrl:
-      'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
+    imageUrl: ytThumb('OvPdjPzVMbQ'),
     youtubeId: 'OvPdjPzVMbQ',
     channel: 'cookingwithalia',
     ingredients: ['دقيق كامل أو شعير', 'خميرة، ماء، رشة ملح', 'زيت مسحة للمحمصة لا للقلي'],
@@ -801,3 +798,4 @@ export const foodTips: FoodTip[] = [
     swapFrom: 'بدل البطبوط المقلي أو المسمن اليومي.',
   },
 ]
+
