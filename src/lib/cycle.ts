@@ -99,9 +99,10 @@ export function addDays(date: Date, amount: number): Date {
   return next
 }
 
-export function cycleDayIndex(start: Date, date: Date, cycleLength: number): number {
+export function cycleDayIndex(start: Date, date: Date, cycleLength: number): number | null {
   const diff = diffDays(start, date)
-  return ((diff % cycleLength) + cycleLength) % cycleLength
+  if (diff < 0) return null
+  return diff % cycleLength
 }
 
 export function phaseForDay(
@@ -112,6 +113,7 @@ export function phaseForDay(
 ): CyclePhase | null {
   if (!periodStart) return null
   const index = cycleDayIndex(fromDateKey(periodStart), date, cycleLength)
+  if (index === null) return null
   if (index < periodLength) return 'period'
   const ovulation = Math.max(periodLength + 1, cycleLength - 14)
   if (index >= ovulation - 1 && index <= ovulation + 1) return 'ovulation'
