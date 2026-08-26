@@ -10,7 +10,7 @@ const HEIGHT_MIN = 140
 const HEIGHT_MAX = 190
 
 const fieldClass =
-  'h-11 w-full min-w-0 rounded-2xl border border-sand bg-canvas px-3 text-base text-ink outline-none focus:border-rose/50'
+  'relative z-10 h-12 w-full min-w-0 rounded-2xl border border-sand bg-canvas px-3 text-base text-ink outline-none focus:border-rose/50'
 
 function clampHeight(value: number) {
   return Math.min(HEIGHT_MAX, Math.max(HEIGHT_MIN, Math.round(value)))
@@ -34,28 +34,11 @@ export function IdealWeightCard() {
     return noteForCurrentWeight(currentKg, range.min, range.max)
   }, [currentKg, range.min, range.max])
 
-  function applyHeight(value: number) {
-    const next = clampHeight(value)
-    setHeightCm(next)
-    setHeightText(String(next))
-  }
-
   function commitHeight() {
     const parsed = parsePositive(heightText)
-    applyHeight(Number.isFinite(parsed) ? parsed : heightCm)
-  }
-
-  function onHeightChange(raw: string) {
-    const digits = raw.replace(/[^\d]/g, '').slice(0, 3)
-    setHeightText(digits)
-    const parsed = parsePositive(digits)
-    if (parsed >= HEIGHT_MIN && parsed <= HEIGHT_MAX) {
-      setHeightCm(parsed)
-    }
-  }
-
-  function nudgeHeight(delta: number) {
-    applyHeight(heightCm + delta)
+    const next = Number.isFinite(parsed) ? clampHeight(parsed) : heightCm
+    setHeightCm(next)
+    setHeightText(String(next))
   }
 
   return (
@@ -70,29 +53,31 @@ export function IdealWeightCard() {
       </p>
 
       <div className="mt-5 grid gap-3 sm:grid-cols-2">
-        <label className="block rounded-[1.25rem] bg-paper/70 px-4 py-3">
-          <span className="text-sm font-medium text-ink">الطول</span>
-          <span className="mt-2 flex items-center gap-2" dir="ltr">
-            <button
-              type="button"
-              aria-label="إنقاص الطول"
-              onClick={() => nudgeHeight(-1)}
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-sand text-lg font-semibold text-ink transition hover:bg-rose hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose"
-            >
-              −
-            </button>
+        <div className="rounded-[1.25rem] bg-paper/70 px-4 py-3">
+          <label htmlFor="ideal-height" className="block text-sm font-medium text-ink">
+            الطول
+          </label>
+          <span className="mt-2 flex items-center gap-2">
             <input
               id="ideal-height"
+              name="height"
               type="text"
               inputMode="numeric"
-              pattern="[0-9]*"
               enterKeyHint="done"
               autoComplete="off"
+              autoCorrect="off"
+              spellCheck={false}
               dir="ltr"
-              min={HEIGHT_MIN}
-              max={HEIGHT_MAX}
               value={heightText}
-              onChange={(event) => onHeightChange(event.target.value)}
+              onFocus={(event) => event.currentTarget.select()}
+              onChange={(event) => {
+                const digits = event.target.value.replace(/[^\d]/g, '').slice(0, 3)
+                setHeightText(digits)
+                const parsed = parsePositive(digits)
+                if (parsed >= HEIGHT_MIN && parsed <= HEIGHT_MAX) {
+                  setHeightCm(parsed)
+                }
+              }}
               onBlur={commitHeight}
               onKeyDown={(event) => {
                 if (event.key === 'Enter') {
@@ -101,31 +86,29 @@ export function IdealWeightCard() {
                   event.currentTarget.blur()
                 }
               }}
-              className={`${fieldClass} text-center`}
+              className={fieldClass}
             />
-            <button
-              type="button"
-              aria-label="زيادة الطول"
-              onClick={() => nudgeHeight(1)}
-              className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-sand text-lg font-semibold text-ink transition hover:bg-rose hover:text-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose"
-            >
-              +
-            </button>
             <span className="shrink-0 text-sm text-muted">سم</span>
           </span>
-        </label>
-        <label className="block rounded-[1.25rem] bg-paper/70 px-4 py-3">
-          <span className="text-sm font-medium text-ink">وزنكِ الحالي (اختياري)</span>
+        </div>
+        <div className="rounded-[1.25rem] bg-paper/70 px-4 py-3">
+          <label htmlFor="ideal-current" className="block text-sm font-medium text-ink">
+            وزنكِ الحالي (اختياري)
+          </label>
           <span className="mt-2 flex items-center gap-2">
             <input
               id="ideal-current"
+              name="weight"
               type="text"
               inputMode="decimal"
               enterKeyHint="done"
               autoComplete="off"
+              autoCorrect="off"
+              spellCheck={false}
               dir="ltr"
               value={current}
               placeholder="—"
+              onFocus={(event) => event.currentTarget.select()}
               onChange={(event) => {
                 setCurrent(event.target.value.replace(/[^\d.,]/g, '').slice(0, 6))
               }}
@@ -133,7 +116,7 @@ export function IdealWeightCard() {
             />
             <span className="shrink-0 text-sm text-muted">كغ</span>
           </span>
-        </label>
+        </div>
       </div>
 
       <div className="mt-6 grid gap-3 sm:grid-cols-2">
