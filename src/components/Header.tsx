@@ -1,6 +1,7 @@
 import { useEffect, useId, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import { IconBlossom, IconLeaf, IconMoon, IconRose } from "./Florals";
+import { SearchBar } from "./SearchBar";
 
 const NAV_ITEMS = [
   { to: "/", label: "الرئيسية", end: true, Icon: IconRose },
@@ -98,6 +99,10 @@ export function Header() {
             />
           </span>
         </button>
+      </div>
+
+      <div className="mx-auto max-w-6xl px-4 pb-3 md:px-6">
+        <SearchBar />
       </div>
 
       <div
