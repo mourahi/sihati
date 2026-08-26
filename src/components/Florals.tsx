@@ -35,6 +35,15 @@ export function IconBlossom({ className = "h-4 w-4" }: IconProps) {
   )
 }
 
+export function IconMoon({ className = "h-4 w-4" }: IconProps) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">
+      <path d="M14.2 3.2a8.8 8.8 0 1 0 6.4 14.6 7.2 7.2 0 0 1-6.4-14.6Z" opacity="0.95" />
+      <circle cx="16.4" cy="7.2" r="1" fill="#d4a07a" />
+    </svg>
+  )
+}
+
 export function IconLeaf({ className = "h-4 w-4" }: IconProps) {
   return (
     <svg viewBox="0 0 24 24" className={className} aria-hidden="true" fill="currentColor">

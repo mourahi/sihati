@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Layout } from './components/Layout'
 import About from './pages/About'
+import Cycle from './pages/Cycle'
 import Home from './pages/Home'
 import Nutrition from './pages/Nutrition'
 import NutritionDetail from './pages/NutritionDetail'
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/workouts/:videoId" element={<Workouts />} />
           <Route path="/nutrition" element={<Nutrition />} />
           <Route path="/nutrition/:id" element={<NutritionDetail />} />
+          <Route path="/cycle" element={<Cycle />} />
           <Route path="/about" element={<About />} />
         </Route>
       </Routes>

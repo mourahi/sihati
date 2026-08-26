@@ -1,12 +1,13 @@
 import { useEffect, useId, useState } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import { IconBlossom, IconLeaf, IconRose } from "./Florals";
+import { IconBlossom, IconLeaf, IconMoon, IconRose } from "./Florals";
 
 const NAV_ITEMS = [
   { to: "/", label: "الرئيسية", end: true, Icon: IconRose },
   { to: "/programs", label: "البرامج", end: false, Icon: IconBlossom },
   { to: "/workouts", label: "الرياضة", end: false, Icon: IconLeaf },
-  { to: "/nutrition", label: "المطبخ الصحي", end: false, Icon: IconRose },
+  { to: "/nutrition", label: "المطبخ", end: false, Icon: IconRose },
+  { to: "/cycle", label: "الدورة", end: false, Icon: IconMoon },
   { to: "/about", label: "عن صحتي", end: false, Icon: IconBlossom },
 ] as const;
 
@@ -55,7 +56,7 @@ export function Header() {
           صحتي
         </Link>
 
-        <nav aria-label="التنقل الرئيسي" className="hidden items-center gap-6 md:flex">
+        <nav aria-label="التنقل الرئيسي" className="hidden items-center gap-4 lg:gap-6 md:flex">
           {NAV_ITEMS.map((item) => (
             <NavLink
               key={item.to}

@@ -1,6 +1,7 @@
+import { Link } from 'react-router-dom'
 import { Badge } from '../components/Badge'
 import { Button } from '../components/Button'
-import { FloralDivider, FloralIllustration } from '../components/Florals'
+import { FloralDivider, FloralIllustration, IconMoon } from '../components/Florals'
 import { FoodCard } from '../components/FoodCard'
 import { ProgramCard } from '../components/ProgramCard'
 import { SectionTitle } from '../components/SectionTitle'
@@ -164,6 +165,27 @@ export default function Home() {
           </Button>
         </div>
       </section>
+
+      <aside className="mx-auto max-w-6xl px-4 pb-8 sm:px-6">
+        <div className="flex flex-col items-start justify-between gap-4 overflow-hidden rounded-[1.75rem] bg-gradient-to-l from-rose-deep via-rose to-[#d4a07a] px-6 py-6 text-cream sm:flex-row sm:items-center">
+          <div>
+            <p className="inline-flex items-center gap-2 text-sm text-cream/90">
+              <IconMoon className="h-4 w-4" />
+              خصوصية أولاً
+            </p>
+            <h2 className="mt-1 font-display text-2xl font-semibold">تتبع الدورة الشهرية</h2>
+            <p className="mt-1 max-w-md text-sm leading-relaxed text-cream/90">
+              تقويم بألوان المراحل. تضغطين اليوم مباشرة على الشبكة، والدخول برقم سري.
+            </p>
+          </div>
+          <Link
+            to="/cycle"
+            className="inline-flex items-center justify-center rounded-[1.5rem] bg-cream px-5 py-2.5 text-sm font-semibold text-rose-deep transition hover:bg-white"
+          >
+            فتح التقويم
+          </Link>
+        </div>
+      </aside>
 
       <aside className="mx-auto max-w-6xl px-4 pb-16 sm:px-6">
         <div className="rounded-[1.5rem] border border-gold/30 bg-sand/80 px-6 py-5">
