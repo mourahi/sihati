@@ -8,9 +8,11 @@ import ProgramDetail from './pages/ProgramDetail'
 import Programs from './pages/Programs'
 import Workouts from './pages/Workouts'
 
+const basename = import.meta.env.BASE_URL.replace(/\/$/, '')
+
 export default function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename || undefined}>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
