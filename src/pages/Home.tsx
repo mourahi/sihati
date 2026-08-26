@@ -144,6 +144,8 @@ export default function Home() {
               category={food.category}
               summary={food.summary}
               href={`/nutrition/${food.id}`}
+              imageUrl={food.imageUrl}
+              youtubeId={food.youtubeId}
             />
           ))}
         </div>

@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom'
 import { Badge } from '../components/Badge'
 import { Button } from '../components/Button'
+import { YoutubeEmbed } from '../components/YoutubeEmbed'
 import { foodTips } from '../data/content'
 
 export default function NutritionDetail() {
@@ -28,6 +29,22 @@ export default function NutritionDetail() {
         {food.title}
       </h1>
       <p className="mt-4 text-lg leading-relaxed text-muted">{food.summary}</p>
+
+      <figure className="mt-8 overflow-hidden rounded-[1.5rem] bg-sand shadow-[0_8px_30px_rgba(44,36,32,0.06)]">
+        <img
+          src={food.imageUrl}
+          alt={food.title}
+          className="aspect-[16/10] w-full object-cover"
+        />
+      </figure>
+
+      <section className="mt-10">
+        <h2 className="font-display text-2xl font-bold text-ink">شاهدي الفيديو</h2>
+        <p className="mt-2 text-sm text-muted">{food.channel}</p>
+        <div className="mt-4">
+          <YoutubeEmbed youtubeId={food.youtubeId} title={food.title} />
+        </div>
+      </section>
 
       <section className="mt-10">
         <h2 className="font-display text-2xl font-bold text-ink">المكوّنات</h2>

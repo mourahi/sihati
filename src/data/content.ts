@@ -29,6 +29,9 @@ export type FoodTip = {
   title: string
   category: 'فطور' | 'غداء' | 'عشاء' | 'سناك' | 'مشروبات' | 'عادات'
   summary: string
+  imageUrl: string
+  youtubeId: string
+  channel: string
   ingredients: string[]
   howTo: string[]
   whyHealthy: string
@@ -551,6 +554,10 @@ export const foodTips: FoodTip[] = [
     title: 'حريرة خفيفة',
     category: 'عشاء',
     summary: 'شوربة مغربية مغذية بكمية أقل من السميد والزيت، مثالية بعد يوم طويل.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'K0vbwA58uAk',
+    channel: 'Kuzina With Simo',
     ingredients: [
       'عدس وحبّة حمص منقوعة',
       'طماطم، بصل، كرفس، قزبرة',
@@ -573,6 +580,10 @@ export const foodTips: FoodTip[] = [
     title: 'طاجين الدجاج بالخضر',
     category: 'غداء',
     summary: 'نفس الروح المغربية: زيتون، ليمون مصبّر، وخضر أكثر من اللحم.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'B9eKYdU4Y4w',
+    channel: 'Cuisine Marocaine',
     ingredients: [
       'صدر دجاج أو قطعة بجلد أقل',
       'جزر، كوسة، بطاطا حبة صغيرة، فلفل',
@@ -593,6 +604,10 @@ export const foodTips: FoodTip[] = [
     title: 'كسكس بالخضر بحصة عاقلة',
     category: 'غداء',
     summary: 'الجمعة تبقى جمعة: الخضر هي الأساس والسميد مرافِق لا جبل.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'AKHYcKwa3Uw',
+    channel: 'Choumicha Chafay',
     ingredients: [
       'كسكس متوسط، ملعقة زيت',
       'لفت، قرع، جزر، حمص، كوسا',
@@ -612,6 +627,10 @@ export const foodTips: FoodTip[] = [
     title: 'سلطة مغربية منعشة',
     category: 'غداء',
     summary: 'طماطم، خيار، فلفل، وزيتون: تفتح الشهية وتملأ الصحن بألوان لا بزيت.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'kfrjbEDd-OE',
+    channel: 'Foodotomic',
     ingredients: [
       'طماطم، خيار، فلفل أخضر أو أحمر',
       'بصلة حمراء رقيقة، قزبرة',
@@ -630,6 +649,10 @@ export const foodTips: FoodTip[] = [
     title: 'عدس بالكمون',
     category: 'غداء',
     summary: 'طبق فقير في الثمن، غني بالحديد والبروتين، مثالي لأيام الزحمة.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'vbkdSy93hHI',
+    channel: 'OhDelices Culinary Academy',
     ingredients: [
       'عدس مغسول',
       'بصل، ثوم، طماطم',
@@ -649,6 +672,10 @@ export const foodTips: FoodTip[] = [
     title: 'أتاي بالنعناع بلا سكر كثير',
     category: 'مشروبات',
     summary: 'الضيافة المغربية تبقى، والحلاوة تقل: النعناع هو النجم لا السكر.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'IazhvG1bLCU',
+    channel: 'cookingwithalia',
     ingredients: ['شاي أخضر', 'نعناع طازج وفير', 'سكر حسب الضيف: ملعقة صغيرة أو بدون', 'ماء ساخن'],
     howTo: [
       'اغسلي النعناع وقدّميه بكثرة فهو يعطي حلاوة طبيعية.',
@@ -663,6 +690,10 @@ export const foodTips: FoodTip[] = [
     title: 'زيت الأركان باعتدال',
     category: 'عادات',
     summary: 'كنز سوسي للنكهة والشعر والبشرة… ومعلقة في الطبخ تكفي.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'TSRC4yy0w-U',
+    channel: 'DinnersWithDave',
     ingredients: ['زيت أركان أصلي للطعام (الغذائي لا التجميلي)', 'خضر أو أملو بكمية صغيرة'],
     howTo: [
       'رشة على السلطة أو بعد طهي الخضر، لا للقلي العميق.',
@@ -676,6 +707,10 @@ export const foodTips: FoodTip[] = [
     title: 'سمك مشوي بالتشريملة',
     category: 'عشاء',
     summary: 'قزبرة، ثوم، بابريكا، وليمون: نكهة كبيرة وسعرات أقل من القلي.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?auto=format&fit=crop&w=900&q=80',
+    youtubeId: '--P8zMyTC1w',
+    channel: "America's Test Kitchen",
     ingredients: [
       'سمك أبيض أو سردين حسب الموسم',
       'قزبرة، معدنوس، ثوم، بابريكا، كمون',
@@ -694,6 +729,10 @@ export const foodTips: FoodTip[] = [
     title: 'فطور البيض والخبز الكامل',
     category: 'فطور',
     summary: 'بداية اليوم التي تمنع القضم العشوائي حتى الغداء.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'hb0Elaa6gxY',
+    channel: 'J. Kenji López-Alt',
     ingredients: [
       'بيضتان مسلوقتان أو مطبوختان بقليل من الزيت',
       'شريحة خبز كامل أو شعير',
@@ -713,6 +752,10 @@ export const foodTips: FoodTip[] = [
     title: 'سناك ذكي: لوز وياغورت وفاكهة',
     category: 'سناك',
     summary: 'بين الوجبات، اختاري ما يسكت الجوع لا ما يشعله.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'UM6Xg4WaWqk',
+    channel: 'India Food Network',
     ingredients: ['10 حبات لوز', 'ياغورت طبيعي', 'تفاحة أو برتقالة أو حبتا تمر'],
     howTo: [
       'ضعي اللوز في علبة صغيرة حتى لا تأكلي الكيس.',
@@ -727,6 +770,10 @@ export const foodTips: FoodTip[] = [
     title: 'الحلويات المغربية بذكاء',
     category: 'عادات',
     summary: 'الغريبية والشباكية فرح المناسبات، لا عادة يومية.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=80',
+    youtubeId: '35z2-EE1iGQ',
+    channel: 'Gourmandises by Nora',
     ingredients: ['فاكهة موسمية', 'ياغورت', 'تمر', 'مكسرات قليلة'],
     howTo: [
       'في العرس أو رمضان: تذوقي قطعة واحدة بوعي، لا صحن المتابعة.',
@@ -741,6 +788,10 @@ export const foodTips: FoodTip[] = [
     title: 'خبز البيت أخف',
     category: 'فطور',
     summary: 'خبز كامل أو شعير مشوي، لا بطبوط مقلي كل صباح.',
+    imageUrl:
+      'https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=900&q=80',
+    youtubeId: 'OvPdjPzVMbQ',
+    channel: 'cookingwithalia',
     ingredients: ['دقيق كامل أو شعير', 'خميرة، ماء، رشة ملح', 'زيت مسحة للمحمصة لا للقلي'],
     howTo: [
       'اخبزي على المقلاة الجافة أو بمسحة زيت.',
