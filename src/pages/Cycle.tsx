@@ -228,7 +228,7 @@ export default function Cycle() {
       <SectionTitle
         eyebrow="خاص بالمرأة"
         title="مساحة لجسمكِ ودورتكِ"
-        subtitle="حساب وزن لطيف حسب طولكِ، وتقويم ملون لدروتكِ خلف رقم سري."
+        subtitle="حساب وزن لطيف حسب طولكِ، وتقويم ملون لدورتكِ خلف رقم سري."
       />
 
       <div className="mt-8">
@@ -265,7 +265,7 @@ export default function Cycle() {
         </section>
       ) : (
         <p className="mt-8 rounded-[1.5rem] bg-sand/80 px-5 py-4 text-center text-sm text-muted">
-          اختاري من التقويم يوم أول نزيف في آخر دورة. لوناً لوناً، يظهر المسار كاملاً.
+          اختاري من التقويم يوم أول نزيف في آخر دورة. تدريجياً يظهر المسار كاملاً.
         </p>
       )}
 

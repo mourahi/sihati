@@ -73,7 +73,7 @@ export default function ProgramDetail() {
                 الرياضة المناسبة لهذه المنطقة
               </h2>
               <p className="mt-2 text-sm text-muted">
-                فيديوهات مختارة لمنطقة {getZoneLabel(program.zone)}، تتابعينها من الدار مع
+                فيديوهات مختارة لمنطقة {getZoneLabel(program.zone)}، تتابعينها من المنزل مع
                 البرنامج.
               </p>
               <div className="mt-6 space-y-8">

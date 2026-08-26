@@ -29,7 +29,7 @@ export const PHASE_META: Record<
   },
   follicular: {
     label: 'ما بعد الحيض',
-    hint: 'الطاقة ترجع بلطف. وقت جميل للحركة الخفيفة والطبخ المغذي.',
+    hint: 'تعود الطاقة بلطف. وقت جميل للحركة الخفيفة والطبخ المغذي.',
     swatch: 'bg-cycle-bloom',
     cell: 'bg-cycle-bloom text-ink',
     text: 'text-[#b86b4a]',
@@ -43,7 +43,7 @@ export const PHASE_META: Record<
   },
   luteal: {
     label: 'ما قبل الدورة',
-    hint: 'الجسم يطلب حناناً: سكر أقل، أتاي خفيف، ونوم أبكر.',
+    hint: 'الجسم يطلب حناناً: سكر أقل، شاي النعناع خفيف، ونوم أبكر.',
     swatch: 'bg-cycle-luteal',
     cell: 'bg-cycle-luteal text-cream shadow-[0_6px_16px_rgba(155,107,168,0.28)]',
     text: 'text-cycle-luteal',

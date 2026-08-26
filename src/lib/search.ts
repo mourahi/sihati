@@ -23,7 +23,7 @@ function normalize(value: string) {
 const PAGES: SearchHit[] = [
   { id: 'page-home', title: 'الرئيسية', hint: 'صفحة البداية', href: '/', kind: 'صفحة' },
   { id: 'page-programs', title: 'البرامج', hint: 'مسارات حسب منطقة الجسم', href: '/programs', kind: 'صفحة' },
-  { id: 'page-classes', title: 'حصة رياضية', hint: 'حصص يوتوب كاملة كأنكِ في النادي', href: '/classes', kind: 'صفحة' },
+  { id: 'page-classes', title: 'حصة رياضية', hint: 'حصص يوتيوب كاملة كأنكِ في النادي', href: '/classes', kind: 'صفحة' },
   { id: 'page-nutrition', title: 'المطبخ الصحي', hint: 'وصفات مغربية خفيفة', href: '/nutrition', kind: 'صفحة' },
   { id: 'page-cycle', title: 'خاص بالمرأة', hint: 'تقويم الدورة والوزن المثالي', href: '/cycle', kind: 'صفحة' },
   { id: 'page-weight', title: 'الوزن المثالي', hint: 'حساب تقدير لطيف حسب الطول', href: '/cycle#ideal-weight', kind: 'صفحة' },

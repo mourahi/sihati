@@ -57,7 +57,7 @@ export default function Workouts() {
       ) : (
         <SectionTitle
           eyebrow="الرياضة"
-          title="فيديوهات تتبعينها من الدار"
+          title="فيديوهات تتبعينها من المنزل"
           subtitle="مدربات معروفات، مدد قصيرة، ومستوى واضح. اختاري المنطقة وابدئي بلطف."
         />
       )}

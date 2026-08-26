@@ -1,9 +1,9 @@
 import { useTheme } from "../lib/theme.tsx";
 
 const LABELS = {
-  light: "الثيم الفاتح. اضغطي للداكن",
-  dark: "الثيم الداكن. اضغطي للثلاثي الأبعاد",
-  three: "الثيم الثلاثي الأبعاد. اضغطي للفاتح",
+  light: "المظهر الفاتح. اضغطي للداكن",
+  dark: "المظهر الداكن. اضغطي للثلاثي الأبعاد",
+  three: "المظهر الثلاثي الأبعاد. اضغطي للفاتح",
 } as const;
 
 export function ThemeToggle() {

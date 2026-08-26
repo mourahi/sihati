@@ -75,7 +75,7 @@ export default function Home() {
         <SectionTitle
           eyebrow="اختاري منطقتك"
           title="ستة مداخل للجسم… بنفس اللطف"
-          subtitle="كل منطقة عندها برنامج أكل وتمارين يناسب إيقاع الدار والحياة المغربية."
+          subtitle="لكل منطقة برنامج غذاء وتمارين يناسب إيقاع المنزل والحياة المغربية."
         />
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {zones.map((zone) => (
@@ -93,8 +93,8 @@ export default function Home() {
       <section className="mx-auto max-w-6xl px-4 py-9 sm:px-6 sm:py-14">
         <SectionTitle
           eyebrow="البرامج"
-          title="ثلاثة مسارات نبدأو بيهم"
-          subtitle="أسابيع قصيرة، أكل كتعرفيه، وحركة تقدرين تكملها."
+          title="ثلاثة مسارات نبدأ بها"
+          subtitle="أسابيع قصيرة، وأكل تعرفينه، وحركة تستطيعين إكمالها."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {featuredPrograms.map((program) => (
@@ -140,7 +140,7 @@ export default function Home() {
         <SectionTitle
           eyebrow="المطبخ الصحي"
           title="وصفات مغربية خفيفة"
-          subtitle="حريرة، طاجين، كسكس… بنسخة تشبع وما تثقلش."
+          subtitle="حريرة، وطاجين، وكسكس… بنسخة تُشبع ولا تُثقل."
         />
         <div className="mt-10 grid gap-4 md:grid-cols-3">
           {featuredFoods.map((food) => (

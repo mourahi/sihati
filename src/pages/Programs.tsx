@@ -19,7 +19,7 @@ export default function Programs() {
       <SectionTitle
         eyebrow="البرامج"
         title="مسار حسب منطقة جسمكِ"
-        subtitle="اختاري المنطقة، وتابعي أسبوعاً بلطف: أكل مغربي وحركة من الدار."
+        subtitle="اختاري المنطقة، وتابعي أسبوعاً بلطف: أكل مغربي وحركة من المنزل."
       />
 
       <div className="chip-row mt-8">

@@ -25,7 +25,7 @@ export default function Nutrition() {
       <SectionTitle
         eyebrow="المطبخ الصحي"
         title="أكل مغربي يشبع ويحب جسمكِ"
-        subtitle="وصفات وعادات يومية: حريرة خفيفة، طاجين خضر، شاي بنعنع كثير وسكر قليل."
+        subtitle="وصفات وعادات يومية: حريرة خفيفة، طاجين خضر، وشاي بالنعناع كثير وسكر قليل."
       />
 
       <div className="chip-row mt-8">
